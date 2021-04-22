@@ -538,6 +538,7 @@ namespace QLTV.UserControll
             this.DGV_Sach.ThemeStyle.RowsStyle.Height = 22;
             this.DGV_Sach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGV_Sach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DGV_Sach.Click += new System.EventHandler(this.DGV_Sach_Click);
             // 
             // USTraSachSV
             // 
