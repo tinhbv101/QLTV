@@ -38,9 +38,14 @@ namespace QLTV
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label_Name = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.changePassword1 = new QLTV.UserControll.ChangePassword();
+            this.editSinhVien1 = new QLTV.UserControll.EditSinhVien();
+            this.usMuonSachSV1 = new QLTV.UserControll.USMuonSachSV();
+            this.usTraSachSV1 = new QLTV.UserControll.USTraSachSV();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
+            this.gunaElipsePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -212,12 +217,45 @@ namespace QLTV
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.usTraSachSV1);
+            this.gunaElipsePanel1.Controls.Add(this.usMuonSachSV1);
+            this.gunaElipsePanel1.Controls.Add(this.editSinhVien1);
+            this.gunaElipsePanel1.Controls.Add(this.changePassword1);
             this.gunaElipsePanel1.Location = new System.Drawing.Point(309, 12);
             this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(9);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 50;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
             this.gunaElipsePanel1.TabIndex = 1;
+            // 
+            // changePassword1
+            // 
+            this.changePassword1.Location = new System.Drawing.Point(0, 0);
+            this.changePassword1.Name = "changePassword1";
+            this.changePassword1.Size = new System.Drawing.Size(1063, 777);
+            this.changePassword1.TabIndex = 0;
+            // 
+            // editSinhVien1
+            // 
+            this.editSinhVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(45)))), ((int)(((byte)(125)))));
+            this.editSinhVien1.Location = new System.Drawing.Point(0, 0);
+            this.editSinhVien1.Name = "editSinhVien1";
+            this.editSinhVien1.Size = new System.Drawing.Size(1063, 777);
+            this.editSinhVien1.TabIndex = 1;
+            // 
+            // usMuonSachSV1
+            // 
+            this.usMuonSachSV1.Location = new System.Drawing.Point(0, 0);
+            this.usMuonSachSV1.Name = "usMuonSachSV1";
+            this.usMuonSachSV1.Size = new System.Drawing.Size(1063, 777);
+            this.usMuonSachSV1.TabIndex = 2;
+            // 
+            // usTraSachSV1
+            // 
+            this.usTraSachSV1.Location = new System.Drawing.Point(0, 0);
+            this.usTraSachSV1.Name = "usTraSachSV1";
+            this.usTraSachSV1.Size = new System.Drawing.Size(1063, 777);
+            this.usTraSachSV1.TabIndex = 3;
             // 
             // mainFrmSinhVien
             // 
@@ -233,6 +271,7 @@ namespace QLTV
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -248,6 +287,10 @@ namespace QLTV
         private Guna.UI.WinForms.GunaButton btnThongTin;
         private Guna.UI.WinForms.GunaButton btnDoiMK;
         private Guna.UI.WinForms.GunaButton btnMuon;
+        private UserControll.USTraSachSV usTraSachSV1;
+        private UserControll.USMuonSachSV usMuonSachSV1;
+        private UserControll.EditSinhVien editSinhVien1;
+        private UserControll.ChangePassword changePassword1;
     }
 }
 
