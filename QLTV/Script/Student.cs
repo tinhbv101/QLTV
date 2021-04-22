@@ -72,8 +72,6 @@ namespace QLTV.Script
             command.Parameters.Add("@sl", SqlDbType.Int).Value = slmuon;
             command.Parameters.Add("@tt", SqlDbType.NVarChar).Value = tinhtrang;
             command.Parameters.Add("@gc", SqlDbType.NVarChar).Value = ghichu;
-
-            
             mydb.openConnection();
 
             if (command.ExecuteNonQuery() == 1)

@@ -121,5 +121,28 @@ namespace QLTV.UserControll
 
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            SqlCommand command;
+            if (rdoMaSach.Checked)
+            {
+                command = new SqlCommand("SELECT MaPhieu, dbo.HSPhieuMuon.MaSach, TenSach, SLMuon,NgayMuon,NgayTra, HSPhieuMuon.GhiChu " +
+                                        "FROM dbo.HSPhieuMuon " +
+                                        "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
+                                        "WHERE dbo.HSPhieuMuon.MSSV = 'SV001'" +
+                                        " and dbo.Sach.MaSach like '%" + TextBox_Search.Text.Trim() + "%'");
+            }
+            else
+            {
+                command = new SqlCommand("SELECT MaPhieu, dbo.HSPhieuMuon.MaSach, TenSach, SLMuon,NgayMuon,NgayTra, HSPhieuMuon.GhiChu " +
+                                        "FROM dbo.HSPhieuMuon " +
+                                        "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
+                                        "WHERE dbo.HSPhieuMuon.MSSV = 'SV001'" +
+                                        " and dbo.HSPhieuMuon.MaPhieu like '%" + TextBox_Search.Text.Trim() + "%'");
+            }
+            DGV_Sach.DataSource = sach.getBooksCommand(command);
+        }
     }
 }

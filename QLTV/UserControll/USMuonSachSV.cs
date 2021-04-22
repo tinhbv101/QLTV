@@ -41,9 +41,7 @@ namespace QLTV.UserControll
             DataTable dt = sach.getBooksCommand(command);
             string maphieu = dt.Rows[0][0].ToString();
             maphieu = maphieu.Replace("MP", "");
-            MessageBox.Show(maphieu);
             int sophieu = Convert.ToInt32(maphieu);
-            MessageBox.Show(sophieu.ToString());
             string maTuDong = "MP";
             int k = sophieu + 1;
             if (k < 10)
