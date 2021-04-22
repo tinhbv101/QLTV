@@ -37,10 +37,15 @@ namespace QLTV.UserControll
 
         public string tangMaTuDong()
         {
-            SqlCommand command = new SqlCommand("select * from HSPhieuMuon");
+            SqlCommand command = new SqlCommand("select Max(maphieu) from HSPhieuMuon");
             DataTable dt = sach.getBooksCommand(command);
+            string maphieu = dt.Rows[0][0].ToString();
+            maphieu = maphieu.Replace("MP", "");
+            MessageBox.Show(maphieu);
+            int sophieu = Convert.ToInt32(maphieu);
+            MessageBox.Show(sophieu.ToString());
             string maTuDong = "MP";
-            int k = dt.Rows.Count + 1;
+            int k = sophieu + 1;
             if (k < 10)
             {
                 maTuDong += "00" + k.ToString();

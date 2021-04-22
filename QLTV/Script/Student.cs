@@ -21,6 +21,46 @@ namespace QLTV.Script
             adapter.Fill(dt);
             return dt;
         }
+
+        public bool traSachALL(string maphieu, string mssv, string masach)
+        {
+            SqlCommand command = new SqlCommand("delete from hsphieumuon where maphieu = @mp and masach = @ms and mssv = @msv", mydb.getConnection);
+            command.Parameters.Add("@mp", SqlDbType.VarChar).Value = maphieu;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
+            mydb.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public bool traSachUpdate(int slmuon, string maphieu, string mssv, string masach)
+        {
+            SqlCommand command = new SqlCommand("update hsphieumuon set slmuon = @sl where maphieu = @mp and mssv = @msv and masach =@ms", mydb.getConnection);
+            command.Parameters.Add("@sl", SqlDbType.Int).Value = slmuon;
+            command.Parameters.Add("@mp", SqlDbType.VarChar).Value = maphieu;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
+            mydb.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public bool muonSach(string maphieu,string mssv, string masach, string ngmuon, string ngtra, int slmuon, string tinhtrang, string ghichu)
         {
             SqlCommand command = new SqlCommand("insert into HSPhieuMuon values (@mp, @msv, @ms, @nm, @nt, @sl, @tt, @gc)",mydb.getConnection);

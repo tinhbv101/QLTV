@@ -41,6 +41,8 @@ namespace QLTV.UserControll
             this.rdoMaSach = new Guna.UI.WinForms.GunaRadioButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.groupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.btn_Duyet = new Guna.UI.WinForms.GunaButton();
+            this.TextBox_MaSach = new Guna.UI.WinForms.GunaTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TextBox_Tre = new Guna.UI.WinForms.GunaTextBox();
             this.labelDenBu = new System.Windows.Forms.Label();
@@ -55,7 +57,6 @@ namespace QLTV.UserControll
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TextBox_MaPhieu = new Guna.UI.WinForms.GunaTextBox();
-            this.TextBox_MaSach = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Sach)).BeginInit();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -239,6 +240,7 @@ namespace QLTV.UserControll
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(3)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.groupBox2.BorderColor = System.Drawing.Color.Maroon;
+            this.groupBox2.Controls.Add(this.btn_Duyet);
             this.groupBox2.Controls.Add(this.TextBox_MaSach);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.TextBox_Tre);
@@ -264,6 +266,52 @@ namespace QLTV.UserControll
             this.groupBox2.TabIndex = 46;
             this.groupBox2.Text = "Trả Sách";
             this.groupBox2.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // btn_Duyet
+            // 
+            this.btn_Duyet.AnimationHoverSpeed = 0.07F;
+            this.btn_Duyet.AnimationSpeed = 0.03F;
+            this.btn_Duyet.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Duyet.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_Duyet.BorderColor = System.Drawing.Color.Black;
+            this.btn_Duyet.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Duyet.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Duyet.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.btn_Duyet.ForeColor = System.Drawing.Color.White;
+            this.btn_Duyet.Image = null;
+            this.btn_Duyet.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Duyet.Location = new System.Drawing.Point(519, 159);
+            this.btn_Duyet.Name = "btn_Duyet";
+            this.btn_Duyet.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Duyet.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Duyet.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Duyet.OnHoverImage = null;
+            this.btn_Duyet.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Duyet.Radius = 10;
+            this.btn_Duyet.Size = new System.Drawing.Size(103, 27);
+            this.btn_Duyet.TabIndex = 72;
+            this.btn_Duyet.Text = "Duyệt";
+            this.btn_Duyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Duyet.Click += new System.EventHandler(this.btn_Duyet_Click);
+            // 
+            // TextBox_MaSach
+            // 
+            this.TextBox_MaSach.BackColor = System.Drawing.Color.Transparent;
+            this.TextBox_MaSach.BaseColor = System.Drawing.Color.White;
+            this.TextBox_MaSach.BorderColor = System.Drawing.Color.Silver;
+            this.TextBox_MaSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_MaSach.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextBox_MaSach.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextBox_MaSach.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextBox_MaSach.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.TextBox_MaSach.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_MaSach.Location = new System.Drawing.Point(148, 80);
+            this.TextBox_MaSach.Name = "TextBox_MaSach";
+            this.TextBox_MaSach.PasswordChar = '\0';
+            this.TextBox_MaSach.Radius = 10;
+            this.TextBox_MaSach.SelectedText = "";
+            this.TextBox_MaSach.Size = new System.Drawing.Size(160, 37);
+            this.TextBox_MaSach.TabIndex = 71;
             // 
             // label10
             // 
@@ -300,7 +348,7 @@ namespace QLTV.UserControll
             this.labelDenBu.AutoSize = true;
             this.labelDenBu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.labelDenBu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelDenBu.Location = new System.Drawing.Point(528, 189);
+            this.labelDenBu.Location = new System.Drawing.Point(529, 191);
             this.labelDenBu.Name = "labelDenBu";
             this.labelDenBu.Size = new System.Drawing.Size(30, 31);
             this.labelDenBu.TabIndex = 68;
@@ -311,7 +359,7 @@ namespace QLTV.UserControll
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(381, 195);
+            this.label5.Location = new System.Drawing.Point(382, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 25);
             this.label5.TabIndex = 67;
@@ -402,6 +450,7 @@ namespace QLTV.UserControll
             this.btnTra.TabIndex = 62;
             this.btnTra.Text = "Trả";
             this.btnTra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTra.Click += new System.EventHandler(this.btnTra_Click);
             // 
             // label17
             // 
@@ -474,25 +523,6 @@ namespace QLTV.UserControll
             this.TextBox_MaPhieu.Size = new System.Drawing.Size(160, 37);
             this.TextBox_MaPhieu.TabIndex = 59;
             // 
-            // TextBox_MaSach
-            // 
-            this.TextBox_MaSach.BackColor = System.Drawing.Color.Transparent;
-            this.TextBox_MaSach.BaseColor = System.Drawing.Color.White;
-            this.TextBox_MaSach.BorderColor = System.Drawing.Color.Silver;
-            this.TextBox_MaSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox_MaSach.FocusedBaseColor = System.Drawing.Color.White;
-            this.TextBox_MaSach.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextBox_MaSach.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TextBox_MaSach.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.TextBox_MaSach.ForeColor = System.Drawing.Color.Black;
-            this.TextBox_MaSach.Location = new System.Drawing.Point(148, 80);
-            this.TextBox_MaSach.Name = "TextBox_MaSach";
-            this.TextBox_MaSach.PasswordChar = '\0';
-            this.TextBox_MaSach.Radius = 10;
-            this.TextBox_MaSach.SelectedText = "";
-            this.TextBox_MaSach.Size = new System.Drawing.Size(160, 37);
-            this.TextBox_MaSach.TabIndex = 71;
-            // 
             // USTraSachSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,7 +533,6 @@ namespace QLTV.UserControll
             this.Controls.Add(this.groupBox2);
             this.Name = "USTraSachSV";
             this.Size = new System.Drawing.Size(1063, 777);
-            this.Load += new System.EventHandler(this.USTraSachSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Sach)).EndInit();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
@@ -540,5 +569,6 @@ namespace QLTV.UserControll
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaTextBox TextBox_MaPhieu;
         private Guna.UI.WinForms.GunaTextBox TextBox_MaSach;
+        private Guna.UI.WinForms.GunaButton btn_Duyet;
     }
 }
