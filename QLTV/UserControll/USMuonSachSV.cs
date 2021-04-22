@@ -160,5 +160,9 @@ namespace QLTV.UserControll
             return true;
         }
 
+        private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

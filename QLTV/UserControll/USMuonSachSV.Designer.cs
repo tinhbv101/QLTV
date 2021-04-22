@@ -39,6 +39,13 @@ namespace QLTV.UserControll
             this.TextBoxt_SLMuon = new Guna.UI.WinForms.GunaTextBox();
             this.groupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.btnMuon = new Guna.UI.WinForms.GunaButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TextBoxt_GhiChu = new Guna.UI.WinForms.GunaTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dtmNgayTra = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.cboMaSach = new Guna.UI.WinForms.GunaComboBox();
+            this.cboTinhTrang = new Guna.UI.WinForms.GunaComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.GroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.btnSearch = new Guna.UI.WinForms.GunaButton();
@@ -47,16 +54,11 @@ namespace QLTV.UserControll
             this.edoTenSach = new Guna.UI.WinForms.GunaRadioButton();
             this.rdoMaSach = new Guna.UI.WinForms.GunaRadioButton();
             this.DGV_Sach = new Guna.UI.WinForms.GunaDataGridView();
-            this.cboTinhTrang = new Guna.UI.WinForms.GunaComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.TextBoxt_GhiChu = new Guna.UI.WinForms.GunaTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtmNgayTra = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboMaSach = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.groupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Sach)).BeginInit();
+            this.gunaElipsePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label17
@@ -186,6 +188,124 @@ namespace QLTV.UserControll
             this.btnMuon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnMuon.Click += new System.EventHandler(this.btnMuon_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(364, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 25);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Ngày Trả:";
+            // 
+            // TextBoxt_GhiChu
+            // 
+            this.TextBoxt_GhiChu.BackColor = System.Drawing.Color.Transparent;
+            this.TextBoxt_GhiChu.BaseColor = System.Drawing.Color.White;
+            this.TextBoxt_GhiChu.BorderColor = System.Drawing.Color.Silver;
+            this.TextBoxt_GhiChu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxt_GhiChu.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextBoxt_GhiChu.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextBoxt_GhiChu.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextBoxt_GhiChu.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.TextBoxt_GhiChu.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxt_GhiChu.Location = new System.Drawing.Point(495, 126);
+            this.TextBoxt_GhiChu.Name = "TextBoxt_GhiChu";
+            this.TextBoxt_GhiChu.PasswordChar = '\0';
+            this.TextBoxt_GhiChu.Radius = 10;
+            this.TextBoxt_GhiChu.SelectedText = "";
+            this.TextBoxt_GhiChu.Size = new System.Drawing.Size(187, 37);
+            this.TextBoxt_GhiChu.TabIndex = 41;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(364, 92);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(125, 25);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Tình Trạng:";
+            // 
+            // dtmNgayTra
+            // 
+            this.dtmNgayTra.BackColor = System.Drawing.Color.Transparent;
+            this.dtmNgayTra.BaseColor = System.Drawing.Color.White;
+            this.dtmNgayTra.BorderColor = System.Drawing.Color.Silver;
+            this.dtmNgayTra.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgayTra.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtmNgayTra.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtmNgayTra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmNgayTra.ForeColor = System.Drawing.Color.Black;
+            this.dtmNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgayTra.Location = new System.Drawing.Point(495, 51);
+            this.dtmNgayTra.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmNgayTra.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmNgayTra.Name = "dtmNgayTra";
+            this.dtmNgayTra.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtmNgayTra.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtmNgayTra.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtmNgayTra.OnPressedColor = System.Drawing.Color.Black;
+            this.dtmNgayTra.Radius = 10;
+            this.dtmNgayTra.Size = new System.Drawing.Size(187, 30);
+            this.dtmNgayTra.TabIndex = 39;
+            this.dtmNgayTra.Text = "22/04/2021";
+            this.dtmNgayTra.Value = new System.DateTime(2021, 4, 22, 11, 37, 58, 266);
+            // 
+            // cboMaSach
+            // 
+            this.cboMaSach.BackColor = System.Drawing.Color.Transparent;
+            this.cboMaSach.BaseColor = System.Drawing.Color.White;
+            this.cboMaSach.BorderColor = System.Drawing.Color.Silver;
+            this.cboMaSach.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaSach.FocusedColor = System.Drawing.Color.Empty;
+            this.cboMaSach.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cboMaSach.ForeColor = System.Drawing.Color.Black;
+            this.cboMaSach.FormattingEnabled = true;
+            this.cboMaSach.Location = new System.Drawing.Point(132, 90);
+            this.cboMaSach.Name = "cboMaSach";
+            this.cboMaSach.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cboMaSach.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cboMaSach.Radius = 10;
+            this.cboMaSach.Size = new System.Drawing.Size(160, 30);
+            this.cboMaSach.TabIndex = 36;
+            // 
+            // cboTinhTrang
+            // 
+            this.cboTinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.cboTinhTrang.BaseColor = System.Drawing.Color.White;
+            this.cboTinhTrang.BorderColor = System.Drawing.Color.Silver;
+            this.cboTinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTinhTrang.FocusedColor = System.Drawing.Color.Empty;
+            this.cboTinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cboTinhTrang.ForeColor = System.Drawing.Color.Black;
+            this.cboTinhTrang.FormattingEnabled = true;
+            this.cboTinhTrang.Items.AddRange(new object[] {
+            "Mới",
+            "Cũ"});
+            this.cboTinhTrang.Location = new System.Drawing.Point(495, 92);
+            this.cboTinhTrang.Name = "cboTinhTrang";
+            this.cboTinhTrang.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cboTinhTrang.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cboTinhTrang.Radius = 10;
+            this.cboTinhTrang.Size = new System.Drawing.Size(187, 30);
+            this.cboTinhTrang.TabIndex = 40;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(364, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Ghi Chú: ";
+            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
@@ -284,7 +404,7 @@ namespace QLTV.UserControll
             this.edoTenSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.edoTenSach.Location = new System.Drawing.Point(148, 62);
             this.edoTenSach.Name = "edoTenSach";
-            this.edoTenSach.Size = new System.Drawing.Size(101, 22);
+            this.edoTenSach.Size = new System.Drawing.Size(76, 20);
             this.edoTenSach.TabIndex = 1;
             this.edoTenSach.Text = "Tên sách";
             // 
@@ -298,13 +418,15 @@ namespace QLTV.UserControll
             this.rdoMaSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.rdoMaSach.Location = new System.Drawing.Point(27, 60);
             this.rdoMaSach.Name = "rdoMaSach";
-            this.rdoMaSach.Size = new System.Drawing.Size(95, 22);
+            this.rdoMaSach.Size = new System.Drawing.Size(72, 20);
             this.rdoMaSach.TabIndex = 0;
             this.rdoMaSach.Text = "Mã sách";
             // 
             // DGV_Sach
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.DGV_Sach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Sach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Sach.BackgroundColor = System.Drawing.Color.White;
@@ -313,7 +435,7 @@ namespace QLTV.UserControll
             this.DGV_Sach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -321,16 +443,16 @@ namespace QLTV.UserControll
             this.DGV_Sach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Sach.ColumnHeadersHeight = 21;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_Sach.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Sach.EnableHeadersVisualStyles = false;
-            this.DGV_Sach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DGV_Sach.Location = new System.Drawing.Point(15, 364);
+            this.DGV_Sach.GridColor = System.Drawing.Color.White;
+            this.DGV_Sach.Location = new System.Drawing.Point(15, 383);
             this.DGV_Sach.Name = "DGV_Sach";
             this.DGV_Sach.RowHeadersVisible = false;
             this.DGV_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -343,149 +465,43 @@ namespace QLTV.UserControll
             this.DGV_Sach.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DGV_Sach.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.DGV_Sach.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGV_Sach.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGV_Sach.ThemeStyle.GridColor = System.Drawing.Color.White;
             this.DGV_Sach.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DGV_Sach.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGV_Sach.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DGV_Sach.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DGV_Sach.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DGV_Sach.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DGV_Sach.ThemeStyle.HeaderStyle.Height = 21;
             this.DGV_Sach.ThemeStyle.ReadOnly = false;
             this.DGV_Sach.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DGV_Sach.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGV_Sach.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.DGV_Sach.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DGV_Sach.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DGV_Sach.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
             this.DGV_Sach.ThemeStyle.RowsStyle.Height = 22;
             this.DGV_Sach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGV_Sach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DGV_Sach.Click += new System.EventHandler(this.DGV_Sach_Click);
             // 
-            // cboTinhTrang
+            // gunaElipsePanel1
             // 
-            this.cboTinhTrang.BackColor = System.Drawing.Color.Transparent;
-            this.cboTinhTrang.BaseColor = System.Drawing.Color.White;
-            this.cboTinhTrang.BorderColor = System.Drawing.Color.Silver;
-            this.cboTinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTinhTrang.FocusedColor = System.Drawing.Color.Empty;
-            this.cboTinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cboTinhTrang.ForeColor = System.Drawing.Color.Black;
-            this.cboTinhTrang.FormattingEnabled = true;
-            this.cboTinhTrang.Items.AddRange(new object[] {
-            "Mới",
-            "Cũ"});
-            this.cboTinhTrang.Location = new System.Drawing.Point(495, 92);
-            this.cboTinhTrang.Name = "cboTinhTrang";
-            this.cboTinhTrang.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cboTinhTrang.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cboTinhTrang.Radius = 10;
-            this.cboTinhTrang.Size = new System.Drawing.Size(187, 30);
-            this.cboTinhTrang.TabIndex = 40;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(364, 92);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(125, 25);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "Tình Trạng:";
-            // 
-            // TextBoxt_GhiChu
-            // 
-            this.TextBoxt_GhiChu.BackColor = System.Drawing.Color.Transparent;
-            this.TextBoxt_GhiChu.BaseColor = System.Drawing.Color.White;
-            this.TextBoxt_GhiChu.BorderColor = System.Drawing.Color.Silver;
-            this.TextBoxt_GhiChu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBoxt_GhiChu.FocusedBaseColor = System.Drawing.Color.White;
-            this.TextBoxt_GhiChu.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextBoxt_GhiChu.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TextBoxt_GhiChu.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.TextBoxt_GhiChu.ForeColor = System.Drawing.Color.Black;
-            this.TextBoxt_GhiChu.Location = new System.Drawing.Point(495, 126);
-            this.TextBoxt_GhiChu.Name = "TextBoxt_GhiChu";
-            this.TextBoxt_GhiChu.PasswordChar = '\0';
-            this.TextBoxt_GhiChu.Radius = 10;
-            this.TextBoxt_GhiChu.SelectedText = "";
-            this.TextBoxt_GhiChu.Size = new System.Drawing.Size(187, 37);
-            this.TextBoxt_GhiChu.TabIndex = 41;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(364, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 25);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Ghi Chú: ";
-            // 
-            // dtmNgayTra
-            // 
-            this.dtmNgayTra.BackColor = System.Drawing.Color.Transparent;
-            this.dtmNgayTra.BaseColor = System.Drawing.Color.White;
-            this.dtmNgayTra.BorderColor = System.Drawing.Color.Silver;
-            this.dtmNgayTra.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgayTra.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtmNgayTra.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtmNgayTra.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtmNgayTra.ForeColor = System.Drawing.Color.Black;
-            this.dtmNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgayTra.Location = new System.Drawing.Point(495, 51);
-            this.dtmNgayTra.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtmNgayTra.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtmNgayTra.Name = "dtmNgayTra";
-            this.dtmNgayTra.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtmNgayTra.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtmNgayTra.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtmNgayTra.OnPressedColor = System.Drawing.Color.Black;
-            this.dtmNgayTra.Radius = 10;
-            this.dtmNgayTra.Size = new System.Drawing.Size(187, 30);
-            this.dtmNgayTra.TabIndex = 39;
-            this.dtmNgayTra.Text = "22/04/2021";
-            this.dtmNgayTra.Value = new System.DateTime(2021, 4, 22, 11, 37, 58, 266);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(364, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 25);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Ngày Trả:";
-            // 
-            // cboMaSach
-            // 
-            this.cboMaSach.BackColor = System.Drawing.Color.Transparent;
-            this.cboMaSach.BaseColor = System.Drawing.Color.White;
-            this.cboMaSach.BorderColor = System.Drawing.Color.Silver;
-            this.cboMaSach.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboMaSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaSach.FocusedColor = System.Drawing.Color.Empty;
-            this.cboMaSach.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cboMaSach.ForeColor = System.Drawing.Color.Black;
-            this.cboMaSach.FormattingEnabled = true;
-            this.cboMaSach.Location = new System.Drawing.Point(132, 90);
-            this.cboMaSach.Name = "cboMaSach";
-            this.cboMaSach.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cboMaSach.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cboMaSach.Radius = 10;
-            this.cboMaSach.Size = new System.Drawing.Size(160, 30);
-            this.cboMaSach.TabIndex = 36;
+            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
+            this.gunaElipsePanel1.Controls.Add(this.gunaLabel1);
+            this.gunaElipsePanel1.Controls.Add(this.DGV_Sach);
+            this.gunaElipsePanel1.Controls.Add(this.GroupBox1);
+            this.gunaElipsePanel1.Controls.Add(this.groupBox2);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Radius = 50;
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
+            this.gunaElipsePanel1.TabIndex = 46;
+            this.gunaElipsePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel1_Paint);
             // 
             // USMuonSachSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.DGV_Sach);
-            this.Controls.Add(this.GroupBox1);
-            this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gunaElipsePanel1);
             this.Name = "USMuonSachSV";
             this.Size = new System.Drawing.Size(1063, 777);
             this.Load += new System.EventHandler(this.USMuonSach_Load);
@@ -494,8 +510,9 @@ namespace QLTV.UserControll
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Sach)).EndInit();
+            this.gunaElipsePanel1.ResumeLayout(false);
+            this.gunaElipsePanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -513,7 +530,6 @@ namespace QLTV.UserControll
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaRadioButton edoTenSach;
         private Guna.UI.WinForms.GunaRadioButton rdoMaSach;
-        private Guna.UI.WinForms.GunaDataGridView DGV_Sach;
         private Guna.UI.WinForms.GunaButton btnMuon;
         private System.Windows.Forms.Label label9;
         private Guna.UI.WinForms.GunaTextBox TextBoxt_GhiChu;
@@ -522,5 +538,7 @@ namespace QLTV.UserControll
         private Guna.UI.WinForms.GunaComboBox cboTinhTrang;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaComboBox cboMaSach;
+        private Guna.UI.WinForms.GunaDataGridView DGV_Sach;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
     }
 }

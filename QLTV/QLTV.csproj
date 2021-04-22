@@ -36,6 +36,9 @@
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,6 +64,18 @@
     <Compile Include="Script\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\Student.cs" />
+    <Compile Include="UserControll\ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControll\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControll\EditSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControll\EditSinhVien.Designer.cs">
+      <DependentUpon>EditSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControll\USMuonSachSV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,7 +99,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControll\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControll\EditSinhVien.resx">
+      <DependentUpon>EditSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControll\USMuonSachSV.resx">
       <DependentUpon>USMuonSachSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +126,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\avt_defaule.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

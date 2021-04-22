@@ -85,5 +85,21 @@ namespace QLTV.Script
                 return false;
             }
         }
+        public bool getCommandSinhVien(SqlCommand command)
+        {
+            command.Connection = mydb.getConnection;
+            mydb.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
     }
 }

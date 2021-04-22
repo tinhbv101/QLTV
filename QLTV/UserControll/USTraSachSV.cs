@@ -144,5 +144,10 @@ namespace QLTV.UserControll
             }
             DGV_Sach.DataSource = sach.getBooksCommand(command);
         }
+
+        private void DGV_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
