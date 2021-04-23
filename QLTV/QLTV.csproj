@@ -83,6 +83,12 @@
     <Compile Include="UserControlGiaoVien\EditGiaoViencs.Designer.cs">
       <DependentUpon>EditGiaoViencs.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlGiaoVien\USChoMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlGiaoVien\USChoMuonSach.Designer.cs">
+      <DependentUpon>USChoMuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlGiaoVien\USMuonSachGV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGiaoVien\EditGiaoViencs.resx">
       <DependentUpon>EditGiaoViencs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGiaoVien\USChoMuonSach.resx">
+      <DependentUpon>USChoMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGiaoVien\USMuonSachGV.resx">
       <DependentUpon>USMuonSachGV.cs</DependentUpon>

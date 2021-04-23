@@ -64,7 +64,6 @@ namespace QLTV.FormGiaoVien
             
             Teacher sach = new Teacher();
             
-            
             //LẤY TÊN
             //LẤY SỐ DƯ
             SqlCommand command = new SqlCommand("Select * from giaovien where magv = @msv");
@@ -116,6 +115,11 @@ namespace QLTV.FormGiaoVien
                 MemoryStream picture = new MemoryStream(pic);
                 Avatar_Pic.Image = Image.FromStream(picture);
             }
+        }
+
+        private void btn_choMuon_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     

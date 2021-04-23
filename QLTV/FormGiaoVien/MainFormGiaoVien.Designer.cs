@@ -30,12 +30,15 @@ namespace QLTV.FormGiaoVien
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.labelHetHang = new System.Windows.Forms.Label();
+            this.labelDangMuon = new System.Windows.Forms.Label();
+            this.labelSodu = new System.Windows.Forms.Label();
+            this.btn_choMuon = new Guna.UI.WinForms.GunaButton();
             this.btnDoiMK = new Guna.UI.WinForms.GunaButton();
             this.btnThongTin = new Guna.UI.WinForms.GunaButton();
             this.btnTra = new Guna.UI.WinForms.GunaButton();
             this.btnMuon = new Guna.UI.WinForms.GunaButton();
-            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label_Name = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
@@ -43,21 +46,18 @@ namespace QLTV.FormGiaoVien
             this.usMuonSachGV1 = new QLTV.UserControlGiaoVien.USMuonSachGV();
             this.editGiaoViencs1 = new QLTV.UserControlGiaoVien.EditGiaoViencs();
             this.changePasswordGV1 = new QLTV.UserControlGiaoVien.ChangePasswordGV();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.labelSodu = new System.Windows.Forms.Label();
-            this.labelDangMuon = new System.Windows.Forms.Label();
-            this.labelHetHang = new System.Windows.Forms.Label();
+            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
+            this.gunaElipsePanel3.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
-            this.gunaElipsePanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gunaElipsePanel3);
-            this.panel1.Controls.Add(this.gunaButton1);
+            this.panel1.Controls.Add(this.btn_choMuon);
             this.panel1.Controls.Add(this.btnDoiMK);
             this.panel1.Controls.Add(this.btnThongTin);
             this.panel1.Controls.Add(this.btnTra);
@@ -70,32 +70,79 @@ namespace QLTV.FormGiaoVien
             this.panel1.Size = new System.Drawing.Size(291, 800);
             this.panel1.TabIndex = 1;
             // 
-            // gunaButton1
+            // gunaElipsePanel3
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(-65, 522);
-            this.gunaButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 40;
-            this.gunaButton1.Size = new System.Drawing.Size(343, 89);
-            this.gunaButton1.TabIndex = 6;
-            this.gunaButton1.Text = "Cho Mượn Sách";
-            this.gunaButton1.TextOffsetX = 100;
+            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(113)))), ((int)(((byte)(197)))));
+            this.gunaElipsePanel3.Controls.Add(this.labelHetHang);
+            this.gunaElipsePanel3.Controls.Add(this.labelDangMuon);
+            this.gunaElipsePanel3.Controls.Add(this.labelSodu);
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(0, 635);
+            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
+            this.gunaElipsePanel3.Radius = 15;
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(291, 154);
+            this.gunaElipsePanel3.TabIndex = 7;
+            // 
+            // labelHetHang
+            // 
+            this.labelHetHang.AutoSize = true;
+            this.labelHetHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelHetHang.ForeColor = System.Drawing.Color.White;
+            this.labelHetHang.Location = new System.Drawing.Point(12, 103);
+            this.labelHetHang.Name = "labelHetHang";
+            this.labelHetHang.Size = new System.Drawing.Size(106, 25);
+            this.labelHetHang.TabIndex = 2;
+            this.labelHetHang.Text = "Hết hạng:";
+            // 
+            // labelDangMuon
+            // 
+            this.labelDangMuon.AutoSize = true;
+            this.labelDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelDangMuon.ForeColor = System.Drawing.Color.White;
+            this.labelDangMuon.Location = new System.Drawing.Point(12, 63);
+            this.labelDangMuon.Name = "labelDangMuon";
+            this.labelDangMuon.Size = new System.Drawing.Size(129, 25);
+            this.labelDangMuon.TabIndex = 1;
+            this.labelDangMuon.Text = "Đang mượn:";
+            // 
+            // labelSodu
+            // 
+            this.labelSodu.AutoSize = true;
+            this.labelSodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelSodu.ForeColor = System.Drawing.Color.White;
+            this.labelSodu.Location = new System.Drawing.Point(12, 23);
+            this.labelSodu.Name = "labelSodu";
+            this.labelSodu.Size = new System.Drawing.Size(76, 25);
+            this.labelSodu.TabIndex = 0;
+            this.labelSodu.Text = "Số dư:";
+            // 
+            // btn_choMuon
+            // 
+            this.btn_choMuon.AnimationHoverSpeed = 0.07F;
+            this.btn_choMuon.AnimationSpeed = 0.03F;
+            this.btn_choMuon.BackColor = System.Drawing.Color.Transparent;
+            this.btn_choMuon.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_choMuon.BorderColor = System.Drawing.Color.Black;
+            this.btn_choMuon.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_choMuon.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_choMuon.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.btn_choMuon.ForeColor = System.Drawing.Color.White;
+            this.btn_choMuon.Image = null;
+            this.btn_choMuon.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_choMuon.Location = new System.Drawing.Point(-65, 522);
+            this.btn_choMuon.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_choMuon.Name = "btn_choMuon";
+            this.btn_choMuon.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_choMuon.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_choMuon.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_choMuon.OnHoverImage = null;
+            this.btn_choMuon.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_choMuon.Radius = 40;
+            this.btn_choMuon.Size = new System.Drawing.Size(343, 89);
+            this.btn_choMuon.TabIndex = 6;
+            this.btn_choMuon.Text = "Cho Mượn Sách";
+            this.btn_choMuon.TextOffsetX = 100;
+            this.btn_choMuon.Click += new System.EventHandler(this.btn_choMuon_Click);
             // 
             // btnDoiMK
             // 
@@ -211,19 +258,6 @@ namespace QLTV.FormGiaoVien
             this.btnMuon.TextOffsetX = 100;
             this.btnMuon.Click += new System.EventHandler(this.btnMuon_Click);
             // 
-            // Avatar_Pic
-            // 
-            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
-            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
-            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
-            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
-            this.Avatar_Pic.Name = "Avatar_Pic";
-            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
-            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Avatar_Pic.TabIndex = 2;
-            this.Avatar_Pic.TabStop = false;
-            this.Avatar_Pic.UseTransfarantBackground = false;
-            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
@@ -290,51 +324,18 @@ namespace QLTV.FormGiaoVien
             this.changePasswordGV1.Size = new System.Drawing.Size(1063, 777);
             this.changePasswordGV1.TabIndex = 0;
             // 
-            // gunaElipsePanel3
+            // Avatar_Pic
             // 
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(113)))), ((int)(((byte)(197)))));
-            this.gunaElipsePanel3.Controls.Add(this.labelHetHang);
-            this.gunaElipsePanel3.Controls.Add(this.labelDangMuon);
-            this.gunaElipsePanel3.Controls.Add(this.labelSodu);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(0, 635);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Radius = 15;
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(291, 154);
-            this.gunaElipsePanel3.TabIndex = 7;
-            // 
-            // labelSodu
-            // 
-            this.labelSodu.AutoSize = true;
-            this.labelSodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelSodu.ForeColor = System.Drawing.Color.White;
-            this.labelSodu.Location = new System.Drawing.Point(12, 23);
-            this.labelSodu.Name = "labelSodu";
-            this.labelSodu.Size = new System.Drawing.Size(76, 25);
-            this.labelSodu.TabIndex = 0;
-            this.labelSodu.Text = "Số dư:";
-            // 
-            // labelDangMuon
-            // 
-            this.labelDangMuon.AutoSize = true;
-            this.labelDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelDangMuon.ForeColor = System.Drawing.Color.White;
-            this.labelDangMuon.Location = new System.Drawing.Point(12, 63);
-            this.labelDangMuon.Name = "labelDangMuon";
-            this.labelDangMuon.Size = new System.Drawing.Size(129, 25);
-            this.labelDangMuon.TabIndex = 1;
-            this.labelDangMuon.Text = "Đang mượn:";
-            // 
-            // labelHetHang
-            // 
-            this.labelHetHang.AutoSize = true;
-            this.labelHetHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelHetHang.ForeColor = System.Drawing.Color.White;
-            this.labelHetHang.Location = new System.Drawing.Point(12, 103);
-            this.labelHetHang.Name = "labelHetHang";
-            this.labelHetHang.Size = new System.Drawing.Size(106, 25);
-            this.labelHetHang.TabIndex = 2;
-            this.labelHetHang.Text = "Hết hạng:";
+            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
+            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
+            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
+            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
+            this.Avatar_Pic.Name = "Avatar_Pic";
+            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
+            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Avatar_Pic.TabIndex = 2;
+            this.Avatar_Pic.TabStop = false;
+            this.Avatar_Pic.UseTransfarantBackground = false;
             // 
             // MainFormGiaoVien
             // 
@@ -348,11 +349,11 @@ namespace QLTV.FormGiaoVien
             this.Text = "MainFormGiaoVien";
             this.Load += new System.EventHandler(this.MainFormGiaoVien_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
-            this.gunaElipsePanel2.ResumeLayout(false);
-            this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel3.PerformLayout();
+            this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,7 +369,7 @@ namespace QLTV.FormGiaoVien
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private System.Windows.Forms.Label label_Name;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btn_choMuon;
         private UserControlGiaoVien.ChangePasswordGV changePasswordGV1;
         private UserControlGiaoVien.EditGiaoViencs editGiaoViencs1;
         private UserControlGiaoVien.USMuonSachGV usMuonSachGV1;
