@@ -34,7 +34,7 @@ namespace QLTV.UserControll
             this.CheckBox_HienThiMK = new Guna.UI.WinForms.GunaCheckBox();
             this.TextBox_NhapLai = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLuu = new Guna.UI.WinForms.GunaButton();
+            this.btnDoiMK = new Guna.UI.WinForms.GunaButton();
             this.label17 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TextBox_MKCu = new Guna.UI.WinForms.GunaTextBox();
@@ -72,7 +72,7 @@ namespace QLTV.UserControll
             this.groupBox_DoiPass.Controls.Add(this.TextBox_NhapLai);
             this.groupBox_DoiPass.Controls.Add(this.label1);
             this.groupBox_DoiPass.Controls.Add(this.TextBox_MKMoi);
-            this.groupBox_DoiPass.Controls.Add(this.btnLuu);
+            this.groupBox_DoiPass.Controls.Add(this.btnDoiMK);
             this.groupBox_DoiPass.Controls.Add(this.label17);
             this.groupBox_DoiPass.Controls.Add(this.label7);
             this.groupBox_DoiPass.Controls.Add(this.TextBox_MKCu);
@@ -95,7 +95,7 @@ namespace QLTV.UserControll
             this.CheckBox_HienThiMK.FillColor = System.Drawing.Color.White;
             this.CheckBox_HienThiMK.Location = new System.Drawing.Point(48, 213);
             this.CheckBox_HienThiMK.Name = "CheckBox_HienThiMK";
-            this.CheckBox_HienThiMK.Size = new System.Drawing.Size(118, 20);
+            this.CheckBox_HienThiMK.Size = new System.Drawing.Size(164, 22);
             this.CheckBox_HienThiMK.TabIndex = 66;
             this.CheckBox_HienThiMK.Text = "Hiển thị mật khẩu";
             this.CheckBox_HienThiMK.CheckedChanged += new System.EventHandler(this.CheckBox_HienThiMK_CheckedChanged);
@@ -131,31 +131,32 @@ namespace QLTV.UserControll
             this.label1.TabIndex = 64;
             this.label1.Text = "Nhập lại mật khẩu:";
             // 
-            // btnLuu
+            // btnDoiMK
             // 
-            this.btnLuu.AnimationHoverSpeed = 0.07F;
-            this.btnLuu.AnimationSpeed = 0.03F;
-            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
-            this.btnLuu.BorderColor = System.Drawing.Color.Black;
-            this.btnLuu.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLuu.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Image = null;
-            this.btnLuu.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLuu.Location = new System.Drawing.Point(128, 274);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnLuu.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnLuu.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnLuu.OnHoverImage = null;
-            this.btnLuu.OnPressedColor = System.Drawing.Color.Black;
-            this.btnLuu.Radius = 20;
-            this.btnLuu.Size = new System.Drawing.Size(221, 63);
-            this.btnLuu.TabIndex = 62;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDoiMK.AnimationHoverSpeed = 0.07F;
+            this.btnDoiMK.AnimationSpeed = 0.03F;
+            this.btnDoiMK.BackColor = System.Drawing.Color.Transparent;
+            this.btnDoiMK.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(53)))));
+            this.btnDoiMK.BorderColor = System.Drawing.Color.Black;
+            this.btnDoiMK.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDoiMK.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDoiMK.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.btnDoiMK.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMK.Image = null;
+            this.btnDoiMK.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDoiMK.Location = new System.Drawing.Point(128, 274);
+            this.btnDoiMK.Name = "btnDoiMK";
+            this.btnDoiMK.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDoiMK.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDoiMK.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDoiMK.OnHoverImage = null;
+            this.btnDoiMK.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDoiMK.Radius = 20;
+            this.btnDoiMK.Size = new System.Drawing.Size(221, 63);
+            this.btnDoiMK.TabIndex = 62;
+            this.btnDoiMK.Text = "Đổi";
+            this.btnDoiMK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
             // 
             // label17
             // 
@@ -228,7 +229,7 @@ namespace QLTV.UserControll
         #endregion
         private Guna.UI.WinForms.GunaTextBox TextBox_MKMoi;
         private Guna.UI.WinForms.GunaGroupBox groupBox_DoiPass;
-        private Guna.UI.WinForms.GunaButton btnLuu;
+        private Guna.UI.WinForms.GunaButton btnDoiMK;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaTextBox TextBox_MKCu;
