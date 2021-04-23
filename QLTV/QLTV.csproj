@@ -175,6 +175,8 @@
   <ItemGroup>
     <None Include="Resources\avt_defaule.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\thuvien.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

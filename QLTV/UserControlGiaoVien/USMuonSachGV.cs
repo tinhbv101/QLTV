@@ -33,6 +33,7 @@ namespace QLTV.UserControlGiaoVien
             TextBox_MaPhieu.Enabled = false;
             TextBox_Search.Text = "";
             TextBoxt_SLMuon.Text = "";
+            dtmNgayTra.MinDate = DateTime.Now;
         }
         public string tangMaTuDong()
         {

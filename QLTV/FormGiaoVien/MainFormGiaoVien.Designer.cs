@@ -39,18 +39,24 @@ namespace QLTV.FormGiaoVien
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label_Name = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.usTraSachGV1 = new QLTV.UserControlGiaoVien.USTraSachGV();
             this.usMuonSachGV1 = new QLTV.UserControlGiaoVien.USMuonSachGV();
             this.editGiaoViencs1 = new QLTV.UserControlGiaoVien.EditGiaoViencs();
             this.changePasswordGV1 = new QLTV.UserControlGiaoVien.ChangePasswordGV();
-            this.usTraSachGV1 = new QLTV.UserControlGiaoVien.USTraSachGV();
+            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.labelSodu = new System.Windows.Forms.Label();
+            this.labelDangMuon = new System.Windows.Forms.Label();
+            this.labelHetHang = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
+            this.gunaElipsePanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gunaElipsePanel3);
             this.panel1.Controls.Add(this.gunaButton1);
             this.panel1.Controls.Add(this.btnDoiMK);
             this.panel1.Controls.Add(this.btnThongTin);
@@ -256,6 +262,13 @@ namespace QLTV.FormGiaoVien
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
             this.gunaElipsePanel1.TabIndex = 2;
             // 
+            // usTraSachGV1
+            // 
+            this.usTraSachGV1.Location = new System.Drawing.Point(0, 0);
+            this.usTraSachGV1.Name = "usTraSachGV1";
+            this.usTraSachGV1.Size = new System.Drawing.Size(1063, 777);
+            this.usTraSachGV1.TabIndex = 3;
+            // 
             // usMuonSachGV1
             // 
             this.usMuonSachGV1.Location = new System.Drawing.Point(0, 0);
@@ -277,12 +290,51 @@ namespace QLTV.FormGiaoVien
             this.changePasswordGV1.Size = new System.Drawing.Size(1063, 777);
             this.changePasswordGV1.TabIndex = 0;
             // 
-            // usTraSachGV1
+            // gunaElipsePanel3
             // 
-            this.usTraSachGV1.Location = new System.Drawing.Point(0, 0);
-            this.usTraSachGV1.Name = "usTraSachGV1";
-            this.usTraSachGV1.Size = new System.Drawing.Size(1063, 777);
-            this.usTraSachGV1.TabIndex = 3;
+            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(113)))), ((int)(((byte)(197)))));
+            this.gunaElipsePanel3.Controls.Add(this.labelHetHang);
+            this.gunaElipsePanel3.Controls.Add(this.labelDangMuon);
+            this.gunaElipsePanel3.Controls.Add(this.labelSodu);
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(0, 635);
+            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
+            this.gunaElipsePanel3.Radius = 15;
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(291, 154);
+            this.gunaElipsePanel3.TabIndex = 7;
+            // 
+            // labelSodu
+            // 
+            this.labelSodu.AutoSize = true;
+            this.labelSodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelSodu.ForeColor = System.Drawing.Color.White;
+            this.labelSodu.Location = new System.Drawing.Point(12, 23);
+            this.labelSodu.Name = "labelSodu";
+            this.labelSodu.Size = new System.Drawing.Size(76, 25);
+            this.labelSodu.TabIndex = 0;
+            this.labelSodu.Text = "Số dư:";
+            // 
+            // labelDangMuon
+            // 
+            this.labelDangMuon.AutoSize = true;
+            this.labelDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelDangMuon.ForeColor = System.Drawing.Color.White;
+            this.labelDangMuon.Location = new System.Drawing.Point(12, 63);
+            this.labelDangMuon.Name = "labelDangMuon";
+            this.labelDangMuon.Size = new System.Drawing.Size(129, 25);
+            this.labelDangMuon.TabIndex = 1;
+            this.labelDangMuon.Text = "Đang mượn:";
+            // 
+            // labelHetHang
+            // 
+            this.labelHetHang.AutoSize = true;
+            this.labelHetHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelHetHang.ForeColor = System.Drawing.Color.White;
+            this.labelHetHang.Location = new System.Drawing.Point(12, 103);
+            this.labelHetHang.Name = "labelHetHang";
+            this.labelHetHang.Size = new System.Drawing.Size(106, 25);
+            this.labelHetHang.TabIndex = 2;
+            this.labelHetHang.Text = "Hết hạng:";
             // 
             // MainFormGiaoVien
             // 
@@ -294,10 +346,13 @@ namespace QLTV.FormGiaoVien
             this.Controls.Add(this.panel1);
             this.Name = "MainFormGiaoVien";
             this.Text = "MainFormGiaoVien";
+            this.Load += new System.EventHandler(this.MainFormGiaoVien_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel1.ResumeLayout(false);
+            this.gunaElipsePanel3.ResumeLayout(false);
+            this.gunaElipsePanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -318,5 +373,9 @@ namespace QLTV.FormGiaoVien
         private UserControlGiaoVien.EditGiaoViencs editGiaoViencs1;
         private UserControlGiaoVien.USMuonSachGV usMuonSachGV1;
         private UserControlGiaoVien.USTraSachGV usTraSachGV1;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
+        private System.Windows.Forms.Label labelDangMuon;
+        private System.Windows.Forms.Label labelSodu;
+        private System.Windows.Forms.Label labelHetHang;
     }
 }

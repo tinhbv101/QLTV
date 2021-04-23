@@ -47,6 +47,7 @@ namespace QLTV.UserControll
             TextBox_SLMat.Text = "";
             TextBox_SLHong.Text = "";
             TextBox_Tre.Text = "";
+            labelDenBu.Text = "0";
         }
 
         private void DGV_Sach_Click(object sender, EventArgs e)
@@ -134,35 +135,103 @@ namespace QLTV.UserControll
             int tongMuon = Convert.ToInt32(dt.Rows[0][0].ToString());
             int tongTra = Convert.ToInt32(TextBoxt_SLTra.Text.ToString().Trim());
             int hieu = tongMuon - tongTra;
-            if(hieu == 0)
+
+            //xem số dư tk
+            command = new SqlCommand("Select * from sinhvien where mssv = @msv");
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            dt = new DataTable();
+            dt = sach.getBooksCommand(command);
+            int sodu = Convert.ToInt32(dt.Rows[0][11].ToString());
+
+
+
+            if (hieu == 0)
             {
-                command = new SqlCommand("delete form hsphieumuon where maphieu = @mp and masach = @ms and ms = @msv");
-                command.Parameters.Add("@mp", SqlDbType.VarChar).Value = TextBox_MaPhieu.Text.Trim();
-                command.Parameters.Add("@ms", SqlDbType.VarChar).Value = TextBox_MaSach.Text.Trim();
-                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
-                if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+                //tính tổng tiền  cần thanh toán
+                command = new SqlCommand("SELECT DONGIA FROM SACH WHERE MASACH = '" + TextBox_MaSach.Text.Trim() + "'");
+                dt = sach.getBooksCommand(command);
+                int giasach = Convert.ToInt32(dt.Rows[0][0].ToString());
+                int slm = Convert.ToInt32(TextBox_SLMat.Text.Trim());
+                int slh = Convert.ToInt32(TextBox_SLHong.Text.Trim());
+                int snt = Convert.ToInt32(TextBox_Tre.Text.Trim());
+                int tongtien = slm * giasach + slh * 2000 + snt * 1000;
+
+                if (sodu < tongtien)
                 {
-                    MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tài khoản không đủ vui lòng nạp thêm", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Trả không thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    sodu = sodu - tongtien;
+                    command = new SqlCommand("update sinhvien set sodu = @sd where mssv = @msv");
+                    command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
+                    command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+
+                    if (sach.getCommandSinhVien(command))//update so du
+                    {
+                        if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+                        {
+                            MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Trả không thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                        USTraSachSV_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi thanh toán", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
                 }
-                USTraSachSV_Load(sender, e);
             }
             else if(hieu > 0)
             {
-                if (sach.traSachUpdate(hieu,TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+
+                //tính tổng tiền  cần thanh toán
+                command = new SqlCommand("SELECT DONGIA FROM SACH WHERE MASACH = '" + TextBox_MaSach.Text.Trim() + "'");
+                dt = sach.getBooksCommand(command);
+                int giasach = Convert.ToInt32(dt.Rows[0][0].ToString());
+                int slm = Convert.ToInt32(TextBox_SLMat.Text.Trim());
+                int slh = Convert.ToInt32(TextBox_SLHong.Text.Trim());
+                int snt = Convert.ToInt32(TextBox_Tre.Text.Trim());
+                int tongtien = slm * giasach + slh * 2000 + snt * 1000;
+
+
+                if (sodu < tongtien)
                 {
-                    MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tài khoản không đủ vui lòng nạp thêm", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Trả không thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    sodu = sodu - tongtien;
+                    command = new SqlCommand("update sinhvien set sodu = @sd where mssv = @mgv");
+                    command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
+                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = "SV001";
+
+                    if (sach.getCommandSinhVien(command))//update so du
+                    {
+                        if (sach.traSachUpdate(hieu, TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+                        {
+                            MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Trả không thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                        USTraSachSV_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi thanh toán", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
                 }
-                USTraSachSV_Load(sender, e);
             }
             else
             {
