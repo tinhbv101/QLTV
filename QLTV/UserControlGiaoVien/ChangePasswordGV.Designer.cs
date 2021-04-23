@@ -1,7 +1,7 @@
 ﻿
-namespace QLTV.UserControll
+namespace QLTV.UserControlGiaoVien
 {
-    partial class ChangePassword
+    partial class ChangePasswordGV
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,39 +29,31 @@ namespace QLTV.UserControll
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextBox_MKMoi = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.groupBox_DoiPass = new Guna.UI.WinForms.GunaGroupBox();
             this.CheckBox_HienThiMK = new Guna.UI.WinForms.GunaCheckBox();
             this.TextBox_NhapLai = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TextBox_MKMoi = new Guna.UI.WinForms.GunaTextBox();
             this.btnDoiMK = new Guna.UI.WinForms.GunaButton();
             this.label17 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TextBox_MKCu = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.groupBox_DoiPass.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
+            this.groupBox_DoiPass.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TextBox_MKMoi
+            // gunaElipsePanel1
             // 
-            this.TextBox_MKMoi.BackColor = System.Drawing.Color.Transparent;
-            this.TextBox_MKMoi.BaseColor = System.Drawing.Color.White;
-            this.TextBox_MKMoi.BorderColor = System.Drawing.Color.Silver;
-            this.TextBox_MKMoi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox_MKMoi.FocusedBaseColor = System.Drawing.Color.White;
-            this.TextBox_MKMoi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextBox_MKMoi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TextBox_MKMoi.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.TextBox_MKMoi.ForeColor = System.Drawing.Color.Black;
-            this.TextBox_MKMoi.Location = new System.Drawing.Point(208, 102);
-            this.TextBox_MKMoi.Name = "TextBox_MKMoi";
-            this.TextBox_MKMoi.PasswordChar = '\0';
-            this.TextBox_MKMoi.Radius = 10;
-            this.TextBox_MKMoi.SelectedText = "";
-            this.TextBox_MKMoi.Size = new System.Drawing.Size(205, 37);
-            this.TextBox_MKMoi.TabIndex = 63;
-            this.TextBox_MKMoi.Text = " ";
+            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
+            this.gunaElipsePanel1.Controls.Add(this.groupBox_DoiPass);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Radius = 50;
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
+            this.gunaElipsePanel1.TabIndex = 53;
             // 
             // groupBox_DoiPass
             // 
@@ -131,6 +123,26 @@ namespace QLTV.UserControll
             this.label1.TabIndex = 64;
             this.label1.Text = "Nhập lại mật khẩu:";
             // 
+            // TextBox_MKMoi
+            // 
+            this.TextBox_MKMoi.BackColor = System.Drawing.Color.Transparent;
+            this.TextBox_MKMoi.BaseColor = System.Drawing.Color.White;
+            this.TextBox_MKMoi.BorderColor = System.Drawing.Color.Silver;
+            this.TextBox_MKMoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_MKMoi.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextBox_MKMoi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextBox_MKMoi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextBox_MKMoi.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.TextBox_MKMoi.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_MKMoi.Location = new System.Drawing.Point(208, 102);
+            this.TextBox_MKMoi.Name = "TextBox_MKMoi";
+            this.TextBox_MKMoi.PasswordChar = '\0';
+            this.TextBox_MKMoi.Radius = 10;
+            this.TextBox_MKMoi.SelectedText = "";
+            this.TextBox_MKMoi.Size = new System.Drawing.Size(205, 37);
+            this.TextBox_MKMoi.TabIndex = 63;
+            this.TextBox_MKMoi.Text = " ";
+            // 
             // btnDoiMK
             // 
             this.btnDoiMK.AnimationHoverSpeed = 0.07F;
@@ -199,43 +211,32 @@ namespace QLTV.UserControll
             this.TextBox_MKCu.Size = new System.Drawing.Size(205, 37);
             this.TextBox_MKCu.TabIndex = 59;
             // 
-            // gunaElipsePanel1
-            // 
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
-            this.gunaElipsePanel1.Controls.Add(this.groupBox_DoiPass);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 50;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
-            this.gunaElipsePanel1.TabIndex = 52;
-            // 
-            // ChangePassword
+            // ChangePasswordGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
-            this.Name = "ChangePassword";
+            this.Name = "ChangePasswordGV";
             this.Size = new System.Drawing.Size(1063, 777);
-            this.Load += new System.EventHandler(this.ChangePassword_Load);
+            this.Load += new System.EventHandler(this.ChangePasswordGV_Load);
+            this.gunaElipsePanel1.ResumeLayout(false);
             this.groupBox_DoiPass.ResumeLayout(false);
             this.groupBox_DoiPass.PerformLayout();
-            this.gunaElipsePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaTextBox TextBox_MKMoi;
+
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaGroupBox groupBox_DoiPass;
+        private Guna.UI.WinForms.GunaCheckBox CheckBox_HienThiMK;
+        private Guna.UI.WinForms.GunaTextBox TextBox_NhapLai;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaTextBox TextBox_MKMoi;
         private Guna.UI.WinForms.GunaButton btnDoiMK;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaTextBox TextBox_MKCu;
-        private Guna.UI.WinForms.GunaCheckBox CheckBox_HienThiMK;
-        private Guna.UI.WinForms.GunaTextBox TextBox_NhapLai;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
     }
 }

@@ -9,18 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLTV.UserControll
+namespace QLTV.UserControlGiaoVien
 {
-    public partial class ChangePassword : UserControl
+    public partial class ChangePasswordGV : UserControl
     {
-        public ChangePassword()
+        Teacher sach = new Teacher();
+        public ChangePasswordGV()
         {
             InitializeComponent();
         }
 
-
-        Student sach = new Student();
-        public void ChangePassword_Load(object sender, EventArgs e)
+        public void ChangePasswordGV_Load(object sender, EventArgs e)
         {
             TextBox_MKCu.Text = "";
             TextBox_MKMoi.Text = "";
@@ -39,9 +38,9 @@ namespace QLTV.UserControll
                 TextBox_MKMoi.UseSystemPasswordChar = false;
                 TextBox_NhapLai.UseSystemPasswordChar = false;
             }
-            else 
+            else
             {
-                
+
                 TextBox_MKCu.UseSystemPasswordChar = true;
                 TextBox_MKMoi.UseSystemPasswordChar = true;
                 TextBox_NhapLai.UseSystemPasswordChar = true;
@@ -52,13 +51,13 @@ namespace QLTV.UserControll
         {
             if (verif())
             {
-                if(sach.changePassword("SV001", TextBox_MKCu.Text, TextBox_MKMoi.Text))
+                if (sach.changePassword("GV001", TextBox_MKCu.Text, TextBox_MKMoi.Text))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ChangePasswordGV_Load(sender, e);
                 }
             }
         }
-
         private bool verif()
         {
             if (TextBox_MKCu.Text.Trim() == ""
@@ -68,7 +67,7 @@ namespace QLTV.UserControll
                 MessageBox.Show("Không được bỏ trống", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if(TextBox_MKMoi.Text != TextBox_NhapLai.Text)
+            else if (TextBox_MKMoi.Text != TextBox_NhapLai.Text)
             {
                 MessageBox.Show("Nhập lại mật khẩu không khớp", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

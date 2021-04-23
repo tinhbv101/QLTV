@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTV.FormGiaoVien;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace QLTV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainFrmSinhVien());
+            //Application.Run(new mainFrmSinhVien());
+            Application.Run(new MainFormGiaoVien());
         }
     }
 }

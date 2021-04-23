@@ -27,7 +27,7 @@ namespace QLTV.UserControll
             SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                 "FROM dbo.HSPhieuMuon " +
                 "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                "WHERE dbo.HSPhieuMuon.MSSV = 'SV001'");
+                "WHERE dbo.HSPhieuMuon.MS = 'SV001'");
             DGV_Sach.DataSource = sach.getBooksCommand(command);
             TextBox_Tre.Enabled = false;
             btnTra.Enabled = false;
@@ -136,7 +136,7 @@ namespace QLTV.UserControll
             int hieu = tongMuon - tongTra;
             if(hieu == 0)
             {
-                command = new SqlCommand("delete form hsphieumuon where maphieu = @mp and masach = @ms and mssv = @msv");
+                command = new SqlCommand("delete form hsphieumuon where maphieu = @mp and masach = @ms and ms = @msv");
                 command.Parameters.Add("@mp", SqlDbType.VarChar).Value = TextBox_MaPhieu.Text.Trim();
                 command.Parameters.Add("@ms", SqlDbType.VarChar).Value = TextBox_MaSach.Text.Trim();
                 command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
@@ -179,7 +179,7 @@ namespace QLTV.UserControll
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MSSV = 'SV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = 'SV001'" +
                                         " and dbo.Sach.MaSach like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             else
@@ -187,7 +187,7 @@ namespace QLTV.UserControll
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MSSV = 'SV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = 'SV001'" +
                                         " and dbo.HSPhieuMuon.MaPhieu like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             DGV_Sach.DataSource = sach.getBooksCommand(command);

@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace QLTV.Script
 {
-    class Student
+    class Teacher
     {
         myDB mydb = new myDB();
-
         public DataTable getBooksCommand(SqlCommand command)
         {
             command.Connection = mydb.getConnection;
@@ -22,21 +21,21 @@ namespace QLTV.Script
             adapter.Fill(dt);
             return dt;
         }
-        public bool changePassword(string mssv, string mkcu, string mkmoi)
+        public bool changePassword(string magv, string mkcu, string mkmoi)
         {
-            SqlCommand command = new SqlCommand("select matkhausv from sinhvien where mssv = '" + mssv +"'", mydb.getConnection);
+            SqlCommand command = new SqlCommand("select matkhaugv from giaovien where magv = '" + magv + "'", mydb.getConnection);
             command.Connection = mydb.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            if(mkcu != dt.Rows[0][0].ToString())
+            if (mkcu != dt.Rows[0][0].ToString())
             {
                 MessageBox.Show("Mật khẩu cũ sai", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            command = new SqlCommand("update sinhvien set matkhausv = @mkm where mssv = @msv", mydb.getConnection);
+            command = new SqlCommand("update giaovien set matkhaugv = @mkm where magv = @msv", mydb.getConnection);
             command.Parameters.Add("@mkm", SqlDbType.VarChar).Value = mkmoi;
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             mydb.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
@@ -50,11 +49,11 @@ namespace QLTV.Script
                 return false;
             }
         }
-        public bool traSachALL(string maphieu, string mssv, string masach)
+        public bool traSachALL(string maphieu, string magv, string masach)
         {
             SqlCommand command = new SqlCommand("delete from hsphieumuon where maphieu = @mp and masach = @ms and ms = @msv", mydb.getConnection);
             command.Parameters.Add("@mp", SqlDbType.VarChar).Value = maphieu;
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
             mydb.openConnection();
 
@@ -69,12 +68,12 @@ namespace QLTV.Script
                 return false;
             }
         }
-        public bool traSachUpdate(int slmuon, string maphieu, string mssv, string masach)
+        public bool traSachUpdate(int slmuon, string maphieu, string magv, string masach)
         {
             SqlCommand command = new SqlCommand("update hsphieumuon set slmuon = @sl where maphieu = @mp and ms = @msv and masach =@ms", mydb.getConnection);
             command.Parameters.Add("@sl", SqlDbType.Int).Value = slmuon;
             command.Parameters.Add("@mp", SqlDbType.VarChar).Value = maphieu;
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
             mydb.openConnection();
 
@@ -89,11 +88,11 @@ namespace QLTV.Script
                 return false;
             }
         }
-        public bool muonSach(string maphieu,string mssv, string masach, string ngmuon, string ngtra, int slmuon, string tinhtrang, string ghichu)
+        public bool muonSach(string maphieu, string magv, string masach, string ngmuon, string ngtra, int slmuon, string tinhtrang, string ghichu)
         {
-            SqlCommand command = new SqlCommand("insert into HSPhieuMuon values (@mp, @msv, @ms, @nm, @nt, @sl, @tt, @gc)",mydb.getConnection);
+            SqlCommand command = new SqlCommand("insert into HSPhieuMuon values (@mp, @msv, @ms, @nm, @nt, @sl, @tt, @gc)", mydb.getConnection);
             command.Parameters.Add("@mp", SqlDbType.VarChar).Value = maphieu;
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
             command.Parameters.Add("@nm", SqlDbType.NVarChar).Value = ngmuon;
             command.Parameters.Add("@nt", SqlDbType.NVarChar).Value = ngtra;
@@ -113,7 +112,7 @@ namespace QLTV.Script
                 return false;
             }
         }
-        public bool getCommandSinhVien(SqlCommand command)
+        public bool getCommandGiaoVien(SqlCommand command)
         {
             command.Connection = mydb.getConnection;
             mydb.openConnection();
