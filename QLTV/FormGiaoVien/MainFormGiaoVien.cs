@@ -22,6 +22,8 @@ namespace QLTV.FormGiaoVien
             editGiaoViencs1.Visible = false;
             usTraSachGV1.Visible = false;
             usMuonSachGV1.Visible = false;
+            usChoMuonSach1.Visible = false;
+
         }
 
         private void btnDoiMK_Click(object sender, EventArgs e)
@@ -119,7 +121,15 @@ namespace QLTV.FormGiaoVien
 
         private void btn_choMuon_Click(object sender, EventArgs e)
         {
-            
+            usChoMuonSach1.Visible = true;
+            usChoMuonSach1.BringToFront();
+            usChoMuonSach1.USChoMuonSach_Load(sender, e);
+            MainFormGiaoVien_Load(sender, e);
+        }
+
+        private void usTraSachGV1_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

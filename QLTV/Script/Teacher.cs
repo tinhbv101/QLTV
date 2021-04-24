@@ -112,6 +112,35 @@ namespace QLTV.Script
                 return false;
             }
         }
+        public bool choMuonSach(string masach, string tensach,string chude, string tacgia,
+            string nxb, int namxb, int sluong, int dongia, string tinhtrang,
+            string ghichu,string magv)
+        {
+            SqlCommand command = new SqlCommand("insert into sach values (@ms,@ts,@cd,@tg,@xb,@nam,@sl,@dg,@tt,@gc,@mgv)", mydb.getConnection);
+            command.Parameters.Add("@ms", SqlDbType.VarChar).Value = masach;
+            command.Parameters.Add("@ts", SqlDbType.NVarChar).Value = tensach;
+            command.Parameters.Add("@cd", SqlDbType.NVarChar).Value = chude;
+            command.Parameters.Add("@tg", SqlDbType.NVarChar).Value = tacgia;
+            command.Parameters.Add("@xb", SqlDbType.NVarChar).Value = nxb;
+            command.Parameters.Add("@nam", SqlDbType.Int).Value = namxb;
+            command.Parameters.Add("@sl", SqlDbType.Int).Value = sluong;
+            command.Parameters.Add("@dg", SqlDbType.Int).Value = dongia;
+            command.Parameters.Add("@tt", SqlDbType.NVarChar).Value = tinhtrang;
+            command.Parameters.Add("@gc", SqlDbType.NVarChar).Value = ghichu;
+            command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = magv;
+            mydb.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public bool getCommandGiaoVien(SqlCommand command)
         {
             command.Connection = mydb.getConnection;

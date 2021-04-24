@@ -39,6 +39,7 @@ namespace QLTV.FormGiaoVien
             this.btnThongTin = new Guna.UI.WinForms.GunaButton();
             this.btnTra = new Guna.UI.WinForms.GunaButton();
             this.btnMuon = new Guna.UI.WinForms.GunaButton();
+            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label_Name = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
@@ -46,12 +47,12 @@ namespace QLTV.FormGiaoVien
             this.usMuonSachGV1 = new QLTV.UserControlGiaoVien.USMuonSachGV();
             this.editGiaoViencs1 = new QLTV.UserControlGiaoVien.EditGiaoViencs();
             this.changePasswordGV1 = new QLTV.UserControlGiaoVien.ChangePasswordGV();
-            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.usChoMuonSach1 = new QLTV.UserControlGiaoVien.USChoMuonSach();
             this.panel1.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,7 +89,7 @@ namespace QLTV.FormGiaoVien
             this.labelHetHang.AutoSize = true;
             this.labelHetHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelHetHang.ForeColor = System.Drawing.Color.White;
-            this.labelHetHang.Location = new System.Drawing.Point(12, 103);
+            this.labelHetHang.Location = new System.Drawing.Point(12, 108);
             this.labelHetHang.Name = "labelHetHang";
             this.labelHetHang.Size = new System.Drawing.Size(106, 25);
             this.labelHetHang.TabIndex = 2;
@@ -99,7 +100,7 @@ namespace QLTV.FormGiaoVien
             this.labelDangMuon.AutoSize = true;
             this.labelDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelDangMuon.ForeColor = System.Drawing.Color.White;
-            this.labelDangMuon.Location = new System.Drawing.Point(12, 63);
+            this.labelDangMuon.Location = new System.Drawing.Point(12, 67);
             this.labelDangMuon.Name = "labelDangMuon";
             this.labelDangMuon.Size = new System.Drawing.Size(129, 25);
             this.labelDangMuon.TabIndex = 1;
@@ -110,7 +111,7 @@ namespace QLTV.FormGiaoVien
             this.labelSodu.AutoSize = true;
             this.labelSodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelSodu.ForeColor = System.Drawing.Color.White;
-            this.labelSodu.Location = new System.Drawing.Point(12, 23);
+            this.labelSodu.Location = new System.Drawing.Point(12, 24);
             this.labelSodu.Name = "labelSodu";
             this.labelSodu.Size = new System.Drawing.Size(76, 25);
             this.labelSodu.TabIndex = 0;
@@ -258,6 +259,19 @@ namespace QLTV.FormGiaoVien
             this.btnMuon.TextOffsetX = 100;
             this.btnMuon.Click += new System.EventHandler(this.btnMuon_Click);
             // 
+            // Avatar_Pic
+            // 
+            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
+            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
+            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
+            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
+            this.Avatar_Pic.Name = "Avatar_Pic";
+            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
+            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Avatar_Pic.TabIndex = 2;
+            this.Avatar_Pic.TabStop = false;
+            this.Avatar_Pic.UseTransfarantBackground = false;
+            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
@@ -285,6 +299,7 @@ namespace QLTV.FormGiaoVien
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.usChoMuonSach1);
             this.gunaElipsePanel1.Controls.Add(this.usTraSachGV1);
             this.gunaElipsePanel1.Controls.Add(this.usMuonSachGV1);
             this.gunaElipsePanel1.Controls.Add(this.editGiaoViencs1);
@@ -302,6 +317,7 @@ namespace QLTV.FormGiaoVien
             this.usTraSachGV1.Name = "usTraSachGV1";
             this.usTraSachGV1.Size = new System.Drawing.Size(1063, 777);
             this.usTraSachGV1.TabIndex = 3;
+            this.usTraSachGV1.Load += new System.EventHandler(this.usTraSachGV1_Load);
             // 
             // usMuonSachGV1
             // 
@@ -324,18 +340,12 @@ namespace QLTV.FormGiaoVien
             this.changePasswordGV1.Size = new System.Drawing.Size(1063, 777);
             this.changePasswordGV1.TabIndex = 0;
             // 
-            // Avatar_Pic
+            // usChoMuonSach1
             // 
-            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
-            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
-            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
-            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
-            this.Avatar_Pic.Name = "Avatar_Pic";
-            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
-            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Avatar_Pic.TabIndex = 2;
-            this.Avatar_Pic.TabStop = false;
-            this.Avatar_Pic.UseTransfarantBackground = false;
+            this.usChoMuonSach1.Location = new System.Drawing.Point(0, 0);
+            this.usChoMuonSach1.Name = "usChoMuonSach1";
+            this.usChoMuonSach1.Size = new System.Drawing.Size(1063, 777);
+            this.usChoMuonSach1.TabIndex = 4;
             // 
             // MainFormGiaoVien
             // 
@@ -351,9 +361,9 @@ namespace QLTV.FormGiaoVien
             this.panel1.ResumeLayout(false);
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,5 +388,6 @@ namespace QLTV.FormGiaoVien
         private System.Windows.Forms.Label labelDangMuon;
         private System.Windows.Forms.Label labelSodu;
         private System.Windows.Forms.Label labelHetHang;
+        private UserControlGiaoVien.USChoMuonSach usChoMuonSach1;
     }
 }
