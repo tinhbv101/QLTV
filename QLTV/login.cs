@@ -20,8 +20,12 @@ namespace QLTV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainFormGiaoVien mainFormGiaoVien = new MainFormGiaoVien(textBox1.Text);
+            /*
+            MainFormGiaoVien mainFormGiaoVien = new MainFormGiaoVien("GV001");
             mainFormGiaoVien.Show();
+            */
+            mainFrmSinhVien mainFrmSinhVien = new mainFrmSinhVien("SV001");
+            mainFrmSinhVien.Show();
         }
     }
 }

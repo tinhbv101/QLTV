@@ -30,7 +30,6 @@ namespace QLTV.FormGiaoVien
 
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
-            changePasswordGV1.magv = magv;
             changePasswordGV1.Visible = true;
             changePasswordGV1.BringToFront();
             changePasswordGV1.ChangePasswordGV_Load(sender, e);
@@ -39,7 +38,6 @@ namespace QLTV.FormGiaoVien
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
-            editGiaoViencs1.magv = magv;
             editGiaoViencs1.Visible = true;
             editGiaoViencs1.BringToFront();
             editGiaoViencs1.EditGiaoViencs_Load(sender, e);
@@ -49,7 +47,6 @@ namespace QLTV.FormGiaoVien
 
         private void btnMuon_Click(object sender, EventArgs e)
         {
-            usMuonSachGV1.magv = magv;
             usMuonSachGV1.Visible = true;
             usMuonSachGV1.BringToFront();
             usMuonSachGV1.USMuonSachGV_Load(sender, e);
@@ -59,7 +56,6 @@ namespace QLTV.FormGiaoVien
 
         private void btnTra_Click(object sender, EventArgs e)
         {
-            usTraSachGV1.magv = magv;
             usTraSachGV1.Visible = true;
             usTraSachGV1.BringToFront();
             usTraSachGV1.USTraSachGV_Load(sender, e);
@@ -69,7 +65,11 @@ namespace QLTV.FormGiaoVien
 
         private void MainFormGiaoVien_Load(object sender, EventArgs e)
         {
-            
+            editGiaoViencs1.magv = magv;
+            usTraSachGV1.magv = magv;
+            usMuonSachGV1.magv = magv;
+            changePasswordGV1.magv = magv;
+
             Teacher sach = new Teacher();
             
             //LẤY TÊN

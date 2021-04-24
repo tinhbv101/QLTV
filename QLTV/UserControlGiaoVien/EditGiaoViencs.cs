@@ -24,25 +24,28 @@ namespace QLTV.UserControlGiaoVien
         Teacher sach = new Teacher();
         public void EditGiaoViencs_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("Select magv, tengv, gioitinhgv,ngaysinhgv, sdtgv, diachigv,avatar from giaovien where magv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
-            DataTable dt = sach.getBooksCommand(command);
-            TextBox_mssv.Text = dt.Rows[0][0].ToString();
-            TextBox_ten.Text = dt.Rows[0][1].ToString();
-            cboGioiTinh.Text = dt.Rows[0][2].ToString();
-            dtmNgaySinh.Value = DateTime.ParseExact(dt.Rows[0][3].ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            TextBox_sdt.Text = dt.Rows[0][4].ToString();
-            TextBox_diachi.Text = dt.Rows[0][5].ToString();
-            if (dt.Rows[0]["avatar"].ToString() == "")
+            if (magv != null)
             {
+                SqlCommand command = new SqlCommand("Select magv, tengv, gioitinhgv,ngaysinhgv, sdtgv, diachigv,avatar from giaovien where magv = @msv");
+                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
+                DataTable dt = sach.getBooksCommand(command);
+                TextBox_mssv.Text = dt.Rows[0][0].ToString();
+                TextBox_ten.Text = dt.Rows[0][1].ToString();
+                cboGioiTinh.Text = dt.Rows[0][2].ToString();
+                dtmNgaySinh.Value = DateTime.ParseExact(dt.Rows[0][3].ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                TextBox_sdt.Text = dt.Rows[0][4].ToString();
+                TextBox_diachi.Text = dt.Rows[0][5].ToString();
+                if (dt.Rows[0]["avatar"].ToString() == "")
+                {
 
-            }
-            else
-            {
-                byte[] pic;
-                pic = (byte[])dt.Rows[0]["avatar"];
-                MemoryStream picture = new MemoryStream(pic);
-                pic_avt.Image = Image.FromStream(picture);
+                }
+                else
+                {
+                    byte[] pic;
+                    pic = (byte[])dt.Rows[0]["avatar"];
+                    MemoryStream picture = new MemoryStream(pic);
+                    pic_avt.Image = Image.FromStream(picture);
+                }
             }
         }
 

@@ -24,32 +24,34 @@ namespace QLTV.UserControlGiaoVien
         Color oh = Color.FromArgb(151, 143, 255);
         public void USTraSachGV_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
-                "FROM dbo.HSPhieuMuon " +
-                "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                "WHERE dbo.HSPhieuMuon.MS = '" + magv +"'");
-            DGV_Sach.DataSource = sach.getBooksCommand(command);
-            TextBox_Tre.Enabled = false;
-            btnTra.Enabled = false;
-            btnTra.BaseColor = Color.Black;
-            btnTra.OnHoverBaseColor = Color.Black;
-            btn_Duyet.Enabled = true;
-            btn_Duyet.BaseColor = bg;
-            btn_Duyet.OnHoverBaseColor = oh;
-            TextBox_MaPhieu.Enabled = true;
-            TextBox_MaSach.Enabled = true;
-            TextBoxt_SLTra.Enabled = true;
-            TextBox_SLMat.Enabled = true;
-            TextBox_SLHong.Enabled = true;
-            TextBox_MaPhieu.Text = "";
-            TextBox_MaSach.Text = "";
-            TextBoxt_SLTra.Text = "";
-            TextBox_SLMat.Text = "";
-            TextBox_SLHong.Text = "";
-            TextBox_Tre.Text = "";
-            labelDenBu.Text = "0";
+            if (magv != null)
+            {
+                SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
+                    "FROM dbo.HSPhieuMuon " +
+                    "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
+                    "WHERE dbo.HSPhieuMuon.MS = '" + magv + "'");
+                DGV_Sach.DataSource = sach.getBooksCommand(command);
+                TextBox_Tre.Enabled = false;
+                btnTra.Enabled = false;
+                btnTra.BaseColor = Color.Black;
+                btnTra.OnHoverBaseColor = Color.Black;
+                btn_Duyet.Enabled = true;
+                btn_Duyet.BaseColor = bg;
+                btn_Duyet.OnHoverBaseColor = oh;
+                TextBox_MaPhieu.Enabled = true;
+                TextBox_MaSach.Enabled = true;
+                TextBoxt_SLTra.Enabled = true;
+                TextBox_SLMat.Enabled = true;
+                TextBox_SLHong.Enabled = true;
+                TextBox_MaPhieu.Text = "";
+                TextBox_MaSach.Text = "";
+                TextBoxt_SLTra.Text = "";
+                TextBox_SLMat.Text = "";
+                TextBox_SLHong.Text = "";
+                TextBox_Tre.Text = "";
+                labelDenBu.Text = "0";
 
-
+            }
         }
 
         private void DGV_Sach_Click(object sender, EventArgs e)

@@ -16,13 +16,16 @@ namespace QLTV
 {
     public partial class mainFrmSinhVien : Form
     {
-        public mainFrmSinhVien()
+        public string mssv;
+        public mainFrmSinhVien(string msv)
         {
+            mssv = msv;
             InitializeComponent();
             changePassword1.Visible = false;
             editSinhVien1.Visible = false;
-            usTraSachSV1.Visible = false;
             usMuonSachSV1.Visible = false;
+            usTraSachSV1.Visible = false;
+
         }
         Student sinhvien = new Student();
         private void usMuonSach1_Load(object sender, EventArgs e)
@@ -55,13 +58,20 @@ namespace QLTV
         private void mainFrmSinhVien_Load(object sender, EventArgs e)
         {
 
+
+            changePassword1.mssv = mssv;
+            editSinhVien1.mssv = mssv;
+            usMuonSachSV1.mssv = mssv;
+            usTraSachSV1.mssv = mssv;
+
+
             Student sach = new Student();
 
 
             //LẤY TÊN
             //LẤY SỐ DƯ
             SqlCommand command = new SqlCommand("Select * from Sinhvien where mssv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
             DataTable dt = new DataTable();
             dt = sinhvien.getBooksCommand(command);
             label_Name.Text = dt.Rows[0][1].ToString().Trim();
@@ -71,13 +81,13 @@ namespace QLTV
 
             //LẤY TỔNG SỐ PHIẾU ĐANG MƯỢN
             command = new SqlCommand("Select count(maphieu) from hsphieumuon where ms = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
             dt = sach.getBooksCommand(command);
             labelDangMuon.Text = "Đang mượn: " + dt.Rows[0][0].ToString();
 
             //TÍNH TỔNG PHIẾU MƯỢN TRỄ HẠN
             command = new SqlCommand("Select ngaytra from hsphieumuon where ms = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
             dt = sach.getBooksCommand(command);
             int sosachtre = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -95,7 +105,7 @@ namespace QLTV
 
             //LẤY AVATAR
             command = new SqlCommand("Select mssv, tensv, gioitinhsv,ngaysinhsv, sdtsv, diachisv,avatar from sinhvien where mssv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
             dt = sach.getBooksCommand(command);
             
             if (dt.Rows[0]["avatar"].ToString() == "")

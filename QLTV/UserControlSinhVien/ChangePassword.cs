@@ -13,6 +13,7 @@ namespace QLTV.UserControll
 {
     public partial class ChangePassword : UserControl
     {
+        public string mssv;
         public ChangePassword()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace QLTV.UserControll
         {
             if (verif())
             {
-                if(sach.changePassword("SV001", TextBox_MKCu.Text, TextBox_MKMoi.Text))
+                if(sach.changePassword(mssv, TextBox_MKCu.Text, TextBox_MKMoi.Text))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ChangePassword_Load(sender, e);

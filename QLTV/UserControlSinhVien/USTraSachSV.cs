@@ -21,33 +21,36 @@ namespace QLTV.UserControll
         Student sach = new Student();
         Color bg = Color.FromArgb(100, 88, 255);
         Color oh = Color.FromArgb(151, 143, 255);
-
+        public string mssv;
         public void USTraSachSV_Load(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
-                "FROM dbo.HSPhieuMuon " +
-                "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                "WHERE dbo.HSPhieuMuon.MS = 'SV001'");
-            DGV_Sach.DataSource = sach.getBooksCommand(command);
-            TextBox_Tre.Enabled = false;
-            btnTra.Enabled = false;
-            btnTra.BaseColor = Color.Black;
-            btnTra.OnHoverBaseColor = Color.Black;
-            btn_Duyet.Enabled = true;
-            btn_Duyet.BaseColor = bg;
-            btn_Duyet.OnHoverBaseColor = oh;
-            TextBox_MaPhieu.Enabled = true;
-            TextBox_MaSach.Enabled = true;
-            TextBoxt_SLTra.Enabled = true;
-            TextBox_SLMat.Enabled = true;
-            TextBox_SLHong.Enabled = true;
-            TextBox_MaPhieu.Text = "";
-            TextBox_MaSach.Text = "";
-            TextBoxt_SLTra.Text = "";
-            TextBox_SLMat.Text = "";
-            TextBox_SLHong.Text = "";
-            TextBox_Tre.Text = "";
-            labelDenBu.Text = "0";
+            if (mssv != null)
+            {
+                SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
+                    "FROM dbo.HSPhieuMuon " +
+                    "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
+                    "WHERE dbo.HSPhieuMuon.MS = '" + mssv + "'");
+                DGV_Sach.DataSource = sach.getBooksCommand(command);
+                TextBox_Tre.Enabled = false;
+                btnTra.Enabled = false;
+                btnTra.BaseColor = Color.Black;
+                btnTra.OnHoverBaseColor = Color.Black;
+                btn_Duyet.Enabled = true;
+                btn_Duyet.BaseColor = bg;
+                btn_Duyet.OnHoverBaseColor = oh;
+                TextBox_MaPhieu.Enabled = true;
+                TextBox_MaSach.Enabled = true;
+                TextBoxt_SLTra.Enabled = true;
+                TextBox_SLMat.Enabled = true;
+                TextBox_SLHong.Enabled = true;
+                TextBox_MaPhieu.Text = "";
+                TextBox_MaSach.Text = "";
+                TextBoxt_SLTra.Text = "";
+                TextBox_SLMat.Text = "";
+                TextBox_SLHong.Text = "";
+                TextBox_Tre.Text = "";
+                labelDenBu.Text = "0";
+            }
         }
 
         private void DGV_Sach_Click(object sender, EventArgs e)
@@ -142,7 +145,7 @@ namespace QLTV.UserControll
 
             //xem số dư tk
             command = new SqlCommand("Select * from sinhvien where mssv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
             dt = new DataTable();
             dt = sach.getBooksCommand(command);
             int sodu = Convert.ToInt32(dt.Rows[0][11].ToString());
@@ -170,11 +173,11 @@ namespace QLTV.UserControll
                     sodu = sodu - tongtien;
                     command = new SqlCommand("update sinhvien set sodu = @sd where mssv = @msv");
                     command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
-                    command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "SV001";
+                    command.Parameters.Add("@msv", SqlDbType.VarChar).Value = mssv;
 
                     if (sach.getCommandSinhVien(command) && updateSoDu())//update so du
                     {
-                        if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+                        if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), mssv, TextBox_MaSach.Text.Trim()))
                         {
                             if (TruSach())//trừ số sách mất
                             {
@@ -218,13 +221,13 @@ namespace QLTV.UserControll
                     sodu = sodu - tongtien;
                     command = new SqlCommand("update sinhvien set sodu = @sd where mssv = @mgv");
                     command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
-                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = "SV001";
+                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = mssv;
 
                     if (sach.getCommandSinhVien(command) && updateSoDu())//update so du
                     {
                         if (TruSach())
                         {
-                            if (sach.traSachUpdate(hieu, TextBox_MaPhieu.Text.Trim(), "SV001", TextBox_MaSach.Text.Trim()))
+                            if (sach.traSachUpdate(hieu, TextBox_MaPhieu.Text.Trim(), mssv, TextBox_MaSach.Text.Trim()))
                             {
                                 MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -338,7 +341,7 @@ namespace QLTV.UserControll
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MS = 'SV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = '"+mssv+"'" +
                                         " and dbo.Sach.MaSach like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             else
@@ -346,7 +349,7 @@ namespace QLTV.UserControll
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MS = 'SV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = '"+mssv+"'" +
                                         " and dbo.HSPhieuMuon.MaPhieu like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             DGV_Sach.DataSource = sach.getBooksCommand(command);
