@@ -15,8 +15,10 @@ namespace QLTV.FormGiaoVien
 {
     public partial class MainFormGiaoVien : Form
     {
-        public MainFormGiaoVien()
+        string magv;
+        public MainFormGiaoVien(string mgv)
         {
+            magv = mgv;
             InitializeComponent();
             changePasswordGV1.Visible = false;
             editGiaoViencs1.Visible = false;
@@ -28,6 +30,7 @@ namespace QLTV.FormGiaoVien
 
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
+            changePasswordGV1.magv = magv;
             changePasswordGV1.Visible = true;
             changePasswordGV1.BringToFront();
             changePasswordGV1.ChangePasswordGV_Load(sender, e);
@@ -36,6 +39,7 @@ namespace QLTV.FormGiaoVien
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
+            editGiaoViencs1.magv = magv;
             editGiaoViencs1.Visible = true;
             editGiaoViencs1.BringToFront();
             editGiaoViencs1.EditGiaoViencs_Load(sender, e);
@@ -45,6 +49,7 @@ namespace QLTV.FormGiaoVien
 
         private void btnMuon_Click(object sender, EventArgs e)
         {
+            usMuonSachGV1.magv = magv;
             usMuonSachGV1.Visible = true;
             usMuonSachGV1.BringToFront();
             usMuonSachGV1.USMuonSachGV_Load(sender, e);
@@ -54,6 +59,7 @@ namespace QLTV.FormGiaoVien
 
         private void btnTra_Click(object sender, EventArgs e)
         {
+            usTraSachGV1.magv = magv;
             usTraSachGV1.Visible = true;
             usTraSachGV1.BringToFront();
             usTraSachGV1.USTraSachGV_Load(sender, e);
@@ -69,8 +75,8 @@ namespace QLTV.FormGiaoVien
             //LẤY TÊN
             //LẤY SỐ DƯ
             SqlCommand command = new SqlCommand("Select * from giaovien where magv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
-            DataTable dt = new DataTable();
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
+            DataTable dt = new DataTable(); 
             dt = sach.getBooksCommand(command);
             label_Name.Text = dt.Rows[0][1].ToString().Trim();
             labelSodu.Text = "Số dư: " + dt.Rows[0][11].ToString() + "đ";
@@ -78,13 +84,13 @@ namespace QLTV.FormGiaoVien
 
             //LẤY TỔNG SỐ PHIẾU ĐANG MƯỢN
             command = new SqlCommand("Select count(maphieu) from hsphieumuon where ms = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             dt = sach.getBooksCommand(command);
             labelDangMuon.Text = "Đang mượn: " + dt.Rows[0][0].ToString();
 
             //TÍNH TỔNG PHIẾU MƯỢN TRỄ HẠN
             command = new SqlCommand("Select ngaytra from hsphieumuon where ms = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             dt = sach.getBooksCommand(command);
             int sosachtre = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -103,7 +109,7 @@ namespace QLTV.FormGiaoVien
 
             //LẤY AVATAR
             command = new SqlCommand("Select magv, tengv, gioitinhgv,ngaysinhgv, sdtgv, diachigv,avatar from giaovien where magv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             dt = sach.getBooksCommand(command);
            
             if (dt.Rows[0]["avatar"].ToString() == "")
@@ -121,6 +127,7 @@ namespace QLTV.FormGiaoVien
 
         private void btn_choMuon_Click(object sender, EventArgs e)
         {
+            usChoMuonSach1.magv = magv;
             usChoMuonSach1.Visible = true;
             usChoMuonSach1.BringToFront();
             usChoMuonSach1.USChoMuonSach_Load(sender, e);

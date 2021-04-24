@@ -14,6 +14,7 @@ namespace QLTV.UserControlGiaoVien
 {
     public partial class USTraSachGV : UserControl
     {
+        public string magv;
         public USTraSachGV()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace QLTV.UserControlGiaoVien
             SqlCommand command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                 "FROM dbo.HSPhieuMuon " +
                 "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                "WHERE dbo.HSPhieuMuon.MS = 'GV001'");
+                "WHERE dbo.HSPhieuMuon.MS = '" + magv +"'");
             DGV_Sach.DataSource = sach.getBooksCommand(command);
             TextBox_Tre.Enabled = false;
             btnTra.Enabled = false;
@@ -148,7 +149,7 @@ namespace QLTV.UserControlGiaoVien
 
             //xem số dư tk
             command = new SqlCommand("Select * from giaovien where magv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             dt = new DataTable();
             dt = sach.getBooksCommand(command);
             int sodu = Convert.ToInt32(dt.Rows[0][11].ToString());
@@ -176,12 +177,12 @@ namespace QLTV.UserControlGiaoVien
                     sodu = sodu - tongtien;
                     command = new SqlCommand("update giaovien set sodu = @sd where magv = @mgv");
                     command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
-                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = "GV001";
+                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = magv;
 
                     if (sach.getCommandGiaoVien(command) && updateSoDu())//update so du
                     {
 
-                        if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), "GV001", TextBox_MaSach.Text.Trim())) //tra sach
+                        if (sach.traSachALL(TextBox_MaPhieu.Text.Trim(), magv, TextBox_MaSach.Text.Trim())) //tra sach
                         {
                             if (TruSach())//trừ số sách mất
                             {
@@ -226,13 +227,13 @@ namespace QLTV.UserControlGiaoVien
                     sodu = sodu - tongtien;
                     command = new SqlCommand("update giaovien set sodu = @sd where magv = @mgv");
                     command.Parameters.Add("@sd", SqlDbType.Int).Value = sodu;
-                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = "GV001";
+                    command.Parameters.Add("@mgv", SqlDbType.VarChar).Value = magv;
 
                     if (sach.getCommandGiaoVien(command) && updateSoDu())//update so du
                     {
                         if (TruSach())
                         {
-                            if (sach.traSachUpdate(hieu, TextBox_MaPhieu.Text.Trim(), "GV001", TextBox_MaSach.Text.Trim())) //tra sach
+                            if (sach.traSachUpdate(hieu, TextBox_MaPhieu.Text.Trim(), magv, TextBox_MaSach.Text.Trim())) //tra sach
                             {
                                 MessageBox.Show("Trả thành công", "Trả sách", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -268,10 +269,10 @@ namespace QLTV.UserControlGiaoVien
             dt = sach.getBooksCommand(command);
             if (dt.Rows[0][0].ToString() != "tt")
             {
-                string magv = dt.Rows[0][0].ToString();
+                string magv1 = dt.Rows[0][0].ToString();
                 //xem số dư tk
                 command = new SqlCommand("Select * from giaovien where magv = @msv");
-                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
+                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv1;
                 dt = new DataTable();
                 dt = sach.getBooksCommand(command);
                 int sodu = Convert.ToInt32(dt.Rows[0][11].ToString());
@@ -287,7 +288,7 @@ namespace QLTV.UserControlGiaoVien
                 sodu = sodu + tongtien;
 
                 //update so du cho giao vien
-                command = new SqlCommand("update giaovien set sodu = " + sodu.ToString() + " where magv = '" + magv.ToString() + "'");
+                command = new SqlCommand("update giaovien set sodu = " + sodu.ToString() + " where magv = '" + magv1.ToString() + "'");
                 if (sach.getCommandGiaoVien(command))
                 {
                     return true;
@@ -349,7 +350,7 @@ namespace QLTV.UserControlGiaoVien
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MS = 'GV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = '" + magv + "'" +
                                         " and dbo.Sach.MaSach like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             else
@@ -357,7 +358,7 @@ namespace QLTV.UserControlGiaoVien
                 command = new SqlCommand("SELECT MaPhieu as 'Mã phiếu', dbo.HSPhieuMuon.MaSach as 'Mã sách', TenSach as 'Tên sách', SLMuon 'SL Mượn',NgayMuon as 'Ngày mượn',NgayTra as 'Ngày trả', HSPhieuMuon.GhiChu as 'Ghi chú'" +
                                         "FROM dbo.HSPhieuMuon " +
                                         "INNER JOIN dbo.Sach ON Sach.MaSach = HSPhieuMuon.MaSach " +
-                                        "WHERE dbo.HSPhieuMuon.MS = 'GV001'" +
+                                        "WHERE dbo.HSPhieuMuon.MS = '"+magv+"'" +
                                         " and dbo.HSPhieuMuon.MaPhieu like '%" + TextBox_Search.Text.Trim() + "%'");
             }
             DGV_Sach.DataSource = sach.getBooksCommand(command);

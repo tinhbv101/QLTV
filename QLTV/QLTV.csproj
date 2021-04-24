@@ -66,6 +66,12 @@
     <Compile Include="FormSinhVien\mainFrmSinhVien.Designer.cs">
       <DependentUpon>mainFrmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Script\myDB.cs" />
     <Compile Include="Script\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSinhVien\mainFrmSinhVien.resx">
       <DependentUpon>mainFrmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

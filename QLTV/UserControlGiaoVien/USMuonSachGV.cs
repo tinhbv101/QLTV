@@ -14,6 +14,9 @@ namespace QLTV.UserControlGiaoVien
 {
     public partial class USMuonSachGV : UserControl
     {
+
+
+        public string magv;
         public USMuonSachGV()
         {
             InitializeComponent();
@@ -103,7 +106,7 @@ namespace QLTV.UserControlGiaoVien
             if (dieuKienMuon())
             {
                 string maphieu = TextBox_MaPhieu.Text;
-                string mssv = "GV001";
+                string mssv = magv;
                 string masach = cboMaSach.Text;
                 string ngaymuon = DateTime.Now.ToString("dd/MM/yyyy");
                 string ngaytra = dtmNgayTra.Value.ToString("dd/MM/yyyy");

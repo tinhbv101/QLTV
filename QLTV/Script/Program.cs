@@ -18,7 +18,8 @@ namespace QLTV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new mainFrmSinhVien());
-            Application.Run(new MainFormGiaoVien());
+            //Application.Run(new MainFormGiaoVien());
+            Application.Run(new login());
         }
     }
 }

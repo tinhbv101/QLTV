@@ -14,6 +14,7 @@ namespace QLTV.UserControlGiaoVien
 {
     public partial class USChoMuonSach : UserControl
     {
+        public string magv;
         public USChoMuonSach()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace QLTV.UserControlGiaoVien
                 int dongia = Convert.ToInt32(TextBox_DonGia.Text.Trim());
                 string tinhtrang = cboTinhTrang.Text;
                 string ghichu = TextBox_GhiChu.Text;
-                string magv = "GV001";
+
 
                 if (sach.choMuonSach(masach, tensach, chude, tacgia, nxb, namxb, sluong, dongia, tinhtrang, ghichu, magv))
                 {

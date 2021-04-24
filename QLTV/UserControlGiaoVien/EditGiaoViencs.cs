@@ -15,15 +15,17 @@ namespace QLTV.UserControlGiaoVien
 {
     public partial class EditGiaoViencs : UserControl
     {
+        public string magv;
         public EditGiaoViencs()
         {
+      
             InitializeComponent();
         }
         Teacher sach = new Teacher();
         public void EditGiaoViencs_Load(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand("Select magv, tengv, gioitinhgv,ngaysinhgv, sdtgv, diachigv,avatar from giaovien where magv = @msv");
-            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+            command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
             DataTable dt = sach.getBooksCommand(command);
             TextBox_mssv.Text = dt.Rows[0][0].ToString();
             TextBox_ten.Text = dt.Rows[0][1].ToString();
@@ -64,7 +66,7 @@ namespace QLTV.UserControlGiaoVien
                 command.Parameters.Add("@ns", SqlDbType.VarChar).Value = dtmNgaySinh.Text.Trim();
                 command.Parameters.Add("@sdt", SqlDbType.Int).Value = Convert.ToInt32(TextBox_sdt.Text.Trim());
                 command.Parameters.Add("@dc", SqlDbType.NVarChar).Value = TextBox_diachi.Text.Trim();
-                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = "GV001";
+                command.Parameters.Add("@msv", SqlDbType.VarChar).Value = magv;
 
                 MemoryStream avatar = new MemoryStream();
                 pic_avt.Image.Save(avatar, pic_avt.Image.RawFormat);

@@ -14,6 +14,7 @@ namespace QLTV.UserControlGiaoVien
     public partial class ChangePasswordGV : UserControl
     {
         Teacher sach = new Teacher();
+        public string magv;
         public ChangePasswordGV()
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace QLTV.UserControlGiaoVien
         {
             if (verif())
             {
-                if (sach.changePassword("GV001", TextBox_MKCu.Text, TextBox_MKMoi.Text))
+                if (sach.changePassword(magv, TextBox_MKCu.Text, TextBox_MKMoi.Text))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ChangePasswordGV_Load(sender, e);
