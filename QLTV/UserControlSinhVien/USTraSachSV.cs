@@ -259,7 +259,7 @@ namespace QLTV.UserControll
             SqlCommand command = new SqlCommand("Select nguon from sach where masach = '" + TextBox_MaSach.Text + "'");
             DataTable dt = new DataTable();
             dt = sach.getBooksCommand(command);
-            if (dt.Rows[0][0].ToString() != "tt")
+            if (dt.Rows[0][0].ToString() != "TV")
             {
                 string magv = dt.Rows[0][0].ToString();
                 //xem số dư tk

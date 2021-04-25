@@ -111,9 +111,9 @@ namespace QLTV
                 if (dt.Rows.Count > 0)
                 {
 
-                    MainFormGiaoVien mainSV = new MainFormGiaoVien(dt.Rows[0][0].ToString());
+                    MainFormGiaoVien mainGV = new MainFormGiaoVien(dt.Rows[0][0].ToString());
                     Visible = false;
-                    mainSV.ShowDialog();
+                    mainGV.ShowDialog();
 
                 }
                 else
@@ -123,7 +123,24 @@ namespace QLTV
             }
             else
             {
+                SqlCommand command = new SqlCommand("select * from admin where tentaikhoanad = @tk and matkhauad = @mk", mydb.getConnection);
+                command.Parameters.Add("@tk", SqlDbType.VarChar).Value = TextBox_Username.Text;
+                command.Parameters.Add("@mk", SqlDbType.VarChar).Value = TextBox_Password.Text;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
 
+                    mainFormAdmin mainAD = new mainFormAdmin(dt.Rows[0][0].ToString());
+                    Visible = false;
+                    mainAD.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("Sai Tài khoản hoặc Mật khẩu", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

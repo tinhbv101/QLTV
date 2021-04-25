@@ -19,8 +19,9 @@ namespace QLTV
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new mainFrmSinhVien());
             //Application.Run(new MainFormGiaoVien());
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
+            //frmLogin login = new frmLogin();
+            //login.ShowDialog();
+            Application.Run(new mainFormAdmin("ad001"));
 
         }
     }
