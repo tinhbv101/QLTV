@@ -34,17 +34,18 @@ namespace QLTV
             this.btnThongTin = new Guna.UI.WinForms.GunaButton();
             this.btnTra = new Guna.UI.WinForms.GunaButton();
             this.btnQuanLySach = new Guna.UI.WinForms.GunaButton();
+            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label_Name = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.Avatar_Pic = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.changePasswordAD1 = new QLTV.UserControlAdmin.ChangePasswordAD();
             this.editAdmin1 = new QLTV.UserControlAdmin.EditAdmin();
             this.usQuanLySach1 = new QLTV.UserControlAdmin.USQuanLySach();
-            this.changePasswordAD1 = new QLTV.UserControlAdmin.ChangePasswordAD();
+            this.usQuanLyMuonTra1 = new QLTV.UserControlAdmin.USQuanLyMuonTra();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,8 +144,9 @@ namespace QLTV
             this.btnTra.Radius = 40;
             this.btnTra.Size = new System.Drawing.Size(343, 89);
             this.btnTra.TabIndex = 4;
-            this.btnTra.Text = "Trả Sách";
-            this.btnTra.TextOffsetX = 120;
+            this.btnTra.Text = "Quản lý mượn trả";
+            this.btnTra.TextOffsetX = 90;
+            this.btnTra.Click += new System.EventHandler(this.btnTra_Click);
             // 
             // btnQuanLySach
             // 
@@ -171,8 +173,21 @@ namespace QLTV
             this.btnQuanLySach.Size = new System.Drawing.Size(343, 89);
             this.btnQuanLySach.TabIndex = 3;
             this.btnQuanLySach.Text = "Quản lý sách";
-            this.btnQuanLySach.TextOffsetX = 120;
+            this.btnQuanLySach.TextOffsetX = 90;
             this.btnQuanLySach.Click += new System.EventHandler(this.btnQuanLySach_Click);
+            // 
+            // Avatar_Pic
+            // 
+            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
+            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
+            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
+            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
+            this.Avatar_Pic.Name = "Avatar_Pic";
+            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
+            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Avatar_Pic.TabIndex = 2;
+            this.Avatar_Pic.TabStop = false;
+            this.Avatar_Pic.UseTransfarantBackground = false;
             // 
             // gunaElipsePanel2
             // 
@@ -201,6 +216,7 @@ namespace QLTV
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.usQuanLyMuonTra1);
             this.gunaElipsePanel1.Controls.Add(this.changePasswordAD1);
             this.gunaElipsePanel1.Controls.Add(this.editAdmin1);
             this.gunaElipsePanel1.Controls.Add(this.usQuanLySach1);
@@ -211,18 +227,12 @@ namespace QLTV
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1063, 777);
             this.gunaElipsePanel1.TabIndex = 3;
             // 
-            // Avatar_Pic
+            // changePasswordAD1
             // 
-            this.Avatar_Pic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
-            this.Avatar_Pic.BaseColor = System.Drawing.Color.White;
-            this.Avatar_Pic.Image = global::QLTV.Properties.Resources.avt_defaule;
-            this.Avatar_Pic.Location = new System.Drawing.Point(49, 8);
-            this.Avatar_Pic.Name = "Avatar_Pic";
-            this.Avatar_Pic.Size = new System.Drawing.Size(200, 200);
-            this.Avatar_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Avatar_Pic.TabIndex = 2;
-            this.Avatar_Pic.TabStop = false;
-            this.Avatar_Pic.UseTransfarantBackground = false;
+            this.changePasswordAD1.Location = new System.Drawing.Point(0, 0);
+            this.changePasswordAD1.Name = "changePasswordAD1";
+            this.changePasswordAD1.Size = new System.Drawing.Size(1063, 777);
+            this.changePasswordAD1.TabIndex = 2;
             // 
             // editAdmin1
             // 
@@ -240,12 +250,12 @@ namespace QLTV
             this.usQuanLySach1.Visible = false;
             this.usQuanLySach1.Load += new System.EventHandler(this.usQuanLySach1_Load);
             // 
-            // changePasswordAD1
+            // usQuanLyMuonTra1
             // 
-            this.changePasswordAD1.Location = new System.Drawing.Point(0, 0);
-            this.changePasswordAD1.Name = "changePasswordAD1";
-            this.changePasswordAD1.Size = new System.Drawing.Size(1063, 777);
-            this.changePasswordAD1.TabIndex = 2;
+            this.usQuanLyMuonTra1.Location = new System.Drawing.Point(0, 0);
+            this.usQuanLyMuonTra1.Name = "usQuanLyMuonTra1";
+            this.usQuanLyMuonTra1.Size = new System.Drawing.Size(1063, 777);
+            this.usQuanLyMuonTra1.TabIndex = 3;
             // 
             // mainFormAdmin
             // 
@@ -259,9 +269,9 @@ namespace QLTV
             this.Text = "mainFormAdmin";
             this.Load += new System.EventHandler(this.mainFormAdmin_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_Pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,5 +290,6 @@ namespace QLTV
         private UserControlAdmin.USQuanLySach usQuanLySach1;
         private UserControlAdmin.EditAdmin editAdmin1;
         private UserControlAdmin.ChangePasswordAD changePasswordAD1;
+        private UserControlAdmin.USQuanLyMuonTra usQuanLyMuonTra1;
     }
 }

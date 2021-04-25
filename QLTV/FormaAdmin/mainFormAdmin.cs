@@ -24,6 +24,7 @@ namespace QLTV
             usQuanLySach1.Visible = false;
             editAdmin1.Visible = false;
             changePasswordAD1.Visible = false;
+            usQuanLyMuonTra1.Visible = false;
         }
 
         private void mainFormAdmin_Load(object sender, EventArgs e)
@@ -87,6 +88,14 @@ namespace QLTV
             changePasswordAD1.Visible = true;
             changePasswordAD1.BringToFront();
             changePasswordAD1.ChangePasswordAD_Load(sender, e);
+            mainFormAdmin_Load(sender, e);
+        }
+
+        private void btnTra_Click(object sender, EventArgs e)
+        {
+            usQuanLyMuonTra1.Visible = true;
+            usQuanLyMuonTra1.BringToFront();
+            usQuanLyMuonTra1.USQuanLyMuonTra_Load(sender, e);
             mainFormAdmin_Load(sender, e);
         }
     }
