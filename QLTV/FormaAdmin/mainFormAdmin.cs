@@ -22,13 +22,17 @@ namespace QLTV
 
             InitializeComponent();
             usQuanLySach1.Visible = false;
+            editAdmin1.Visible = false;
+            changePasswordAD1.Visible = false;
         }
 
         private void mainFormAdmin_Load(object sender, EventArgs e)
         {
             Admin sach = new Admin();
 
-
+            editAdmin1.maad = maad;
+            changePasswordAD1.maad = maad;
+            
 
             //LẤY AVATAR
             SqlCommand command = new SqlCommand("Select maad, tenad, gioitinhad,ngaysinhad, sdtad, diachiad,avatar from admin where maad = @msv");
@@ -61,11 +65,29 @@ namespace QLTV
             usQuanLySach1.Visible = true;
             usQuanLySach1.BringToFront();
             usQuanLySach1.USQuanLySach_Load(sender, e);
+            mainFormAdmin_Load(sender, e);
         }
 
         private void usQuanLySach1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+            editAdmin1.Visible = true;
+            editAdmin1.BringToFront();
+            editAdmin1.EditAdmin_Load(sender, e);
+            mainFormAdmin_Load(sender, e);
+
+        }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
+        {
+            changePasswordAD1.Visible = true;
+            changePasswordAD1.BringToFront();
+            changePasswordAD1.ChangePasswordAD_Load(sender, e);
+            mainFormAdmin_Load(sender, e);
         }
     }
 }

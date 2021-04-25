@@ -34,7 +34,7 @@ namespace QLTV.Script
                 MessageBox.Show("Mật khẩu cũ sai", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            command = new SqlCommand("update admin set matkhauad = @mkm where magv = @msv", mydb.getConnection);
+            command = new SqlCommand("update admin set matkhauad = @mkm where maad = @msv", mydb.getConnection);
             command.Parameters.Add("@mkm", SqlDbType.VarChar).Value = mkmoi;
             command.Parameters.Add("@msv", SqlDbType.VarChar).Value = maad;
             mydb.openConnection();
