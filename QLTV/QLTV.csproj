@@ -66,11 +66,11 @@
     <Compile Include="FormSinhVien\mainFrmSinhVien.Designer.cs">
       <DependentUpon>mainFrmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Script\myDB.cs" />
     <Compile Include="Script\Program.cs" />
@@ -137,8 +137,8 @@
     <EmbeddedResource Include="FormSinhVien\mainFrmSinhVien.resx">
       <DependentUpon>mainFrmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
